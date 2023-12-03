@@ -1,5 +1,4 @@
 
-https://yef4n.github.io/rPlaceAnalysis/
 R/place Analytics Página web: 
 Mapa de calor Durante todo el tiempo zonas donde se coloquen más bloques.
 Mapa de calor Durante por cada día zonas donde se coloquen más bloques.
