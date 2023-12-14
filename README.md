@@ -48,6 +48,18 @@ _Pyspark_:Biblioteca de Python que se utiliza como interfaz para Apache Spark. C
 
 Los lenguajes que necesitaremos serán HTML y JavaScript para hacer la página web y Python para aplicar el marco de procesamiento de datos de Apache Spark para analizar los datos que tenemos.
 Utilizaremos Visual Code como herramienta principal para codificar, Google Cloud para almacenar los datos y GitHub para trabajar de forma colaborativa.
-
+# Por hacer!!!!!!!!!
 ### Como probar nuestro proyecto
 Para reproducir nuestro proyecto en google cloud se seguirán los siguientes pasos:
+Antes de nada se
+
+**1-** Create a Dataproc cluster from the Cloud Shell:
+gcloud dataproc clusters create example-cluster --region europe-west6 --master-boot-disk-size 50GB --worker-boot-disk-size 50GB --enable-component-gateway
+
+**2-** Go to Navigation menu () > Dataproc > Clusters, click on the cluster name to get the Cluster details, then click on VM Instances.
+
+**3-** Connect to the cluster's master node using SSH.
+
+**4-** 
+
+## Resultados
