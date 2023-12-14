@@ -1,0 +1,46 @@
+body {
+    display: block;
+    
+    height: 50vh;
+}
+
+header {  
+    text-align: center;
+    border-bottom: 1px solid #1b1c1d; /* Línea separadora fina */
+    padding-bottom: 10px; /* Espaciado opcional debajo de la línea */
+    background-image: url('/img/intento44.png'); /* Ruta de la imagen de fondo */
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+header h1 {
+    margin: 0;
+    color: aliceblue;
+    text-shadow: 2px 2px 2px #000; /* Agrega un sombreado con un desplazamiento y color */
+    -webkit-text-stroke: 1px black; /* Grosor y color del delineado */
+}
+
+header img {
+    width: 100px; /* Ajusta el tamaño del logo según tus necesidades */
+    vertical-align: middle; /* Centra verticalmente el logo */
+
+}
+
+#ctn-descripcion {
+    max-height: 500px; /* Puedes ajustar la altura máxima según tus necesidades */
+    overflow: auto;
+    max-width: 580px;
+    margin-left: 20px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+#ctn-video{
+    max-height: 500px;
+    margin-top: 20px;
+    margin-left: 20px;
+}
