@@ -23,7 +23,6 @@ El link a los datos es el siguiente: https://www.kaggle.com/datasets/antoinecarp
 Los lenguajes que necesitaremos serán HTML y JavaScript para hacer la página web y Python para aplicar el marco de procesamiento de datos de Apache Spark para analizar los datos que tenemos.
 Utilizaremos Visual Code como herramienta principal para codificar, Google Cloud para almacenar los datos y GitHub para trabajar de forma colaborativa.
 
-https://prod.liveshare.vsengsaas.visualstudio.com/join?CBB832EBDF0F21A69BF10CA8572460F052D4
 
 ### Codes
 Se han desarrollado los siguientes scripts en Python, para ver los contenidos o descargarlos, dirigirse a la carpeta [scripts].
