@@ -19,12 +19,9 @@ El formato de los datos es csv, han sido obtenidos de la página de Kaggle. La i
 
 El link a los datos es el siguiente: https://www.kaggle.com/datasets/antoinecarpentier/redditrplacecsv
 
-## Descripción de herramientas e infraestructuras
-Los lenguajes que necesitaremos serán HTML y JavaScript para hacer la página web y Python para aplicar el marco de procesamiento de datos de Apache Spark para analizar los datos que tenemos.
-Utilizaremos Visual Code como herramienta principal para codificar, Google Cloud para almacenar los datos y GitHub para trabajar de forma colaborativa.
+## Descripción de códigos, herramientas e infraestructuras
 
-
-### Codes
+### Codigos
 Se han desarrollado los siguientes scripts en Python, para ver los contenidos o descargarlos, dirigirse a la carpeta [scripts](/scripts).
 
 En todos los códigos hay una primera lectura de los argumentos con los que se va a trabajar (inserte csv). Debido a que el csv contiene un encabezado a la hora de leerlo se añade la opción para eliminarlo del conjunto de datos.
@@ -41,3 +38,28 @@ Debido a que ciertas casillas del csv están vacías (en la columna del timestam
 
 [colorMasUsadoHora.py](scripts/colorMasUsadoHora.py): Utiliza de nuevo la columna timestampt y por cada hora de cada día muestra en forma de gráfico de lineas los 10 colores que más se han utilizado (En el caso del blanco se ha utilizado el color negro pero en vez de puntos se han utilizado asteriscos para diferenciarlo). Hemos establecido el límite superior de la gráfica a 1500000 elementos para poder apreciar la diferencia entre los valores debido a que el valor #FFFFFF al final de la gráfica toma un valor exorbitado.
 
+### Infraestructura
+Para el desarrollo del proyecto hemos utilizado las siguientes herramientas:
+_Github_: Control de versiones, almacenamiento de datos y setup de la página web (github pages).
+_Google Cloud_: Almacenamiento del csv y los códigos y ejecución de los códigos.
+_Matplotlib_: Librería de Python para la creación de los gráficos que generan los códigos.
+_Python_: Lenguaje de programación usado para generar los códigos.
+_Pyspark_:Biblioteca de Python que se utiliza como interfaz para Apache Spark. Con PySpark, podemos realizar operaciones en datasets y aprovechar la programación funcional paralela.
+
+Los lenguajes que necesitaremos serán HTML y JavaScript para hacer la página web y Python para aplicar el marco de procesamiento de datos de Apache Spark para analizar los datos que tenemos.
+Utilizaremos Visual Code como herramienta principal para codificar, Google Cloud para almacenar los datos y GitHub para trabajar de forma colaborativa.
+# Por hacer!!!!!!!!!
+### Como probar nuestro proyecto
+Para reproducir nuestro proyecto en google cloud se seguirán los siguientes pasos:
+Antes de nada se
+
+**1-** Create a Dataproc cluster from the Cloud Shell:
+gcloud dataproc clusters create example-cluster --region europe-west6 --master-boot-disk-size 50GB --worker-boot-disk-size 50GB --enable-component-gateway
+
+**2-** Go to Navigation menu () > Dataproc > Clusters, click on the cluster name to get the Cluster details, then click on VM Instances.
+
+**3-** Connect to the cluster's master node using SSH.
+
+**4-** 
+
+## Resultados
