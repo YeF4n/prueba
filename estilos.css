@@ -49,6 +49,10 @@ header img {
     margin-left: 20px;
 }
 
+#graficaActividad img{
+    width: 100%;
+}
+/*Estilo del scroll bar*/
 ::-webkit-scrollbar {
     width: 10px;
     background: #ffffff;
