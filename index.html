@@ -21,19 +21,18 @@
             </div>
             <!--Intro de la presentación, aquí ponemos lo del project proposal-->
             <div class="col-md-6" id="ctn-descripcion">
-                <h2>Descripción del problema</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
+                <h2>Descripción del proyecto</h2>
+                <p>El proyecto trata sobre el análisis del mural llamado r/place creado en April Fools’ Day del 2017 en Reddit.</p>
+                <p>El lienzo inicialmente es de 1000 x 1000 píxeles, aunque a lo largo de los dos días que dura el evento, su tamaño aumenta hasta los 2000 x 2000 píxeles. Los usuarios pueden cambiar el color de un píxel cada 5 minutos. Aunque este proyecto se crea cada año desde 2021 se ha elegido el de 2017 ya que fue el primero que se creó.</p>
+                <p>Comunidades de distintos ámbitos se organizan para crear imágenes a gran escala como por ejemplo banderas de sus países, monumentos, logos, comida o incluso personajes de series o películas.</p>
+                <p>En este proyecto se van a estudiar las zonas que más actividad han tenido a través de un mapa de calor, así como los colores más usados y a qué hora hay más actividad. Viendo los dibujos dónde más gente participa se podrá ver qué comunidades son más activos, las zonas más disputadas, cuántos píxeles ha puesto la persona con más actividad en el mural, o si hay zonas que hayan sobrevivido desde el inicio.</p>
+                
                 <h2>Necesidad de Big Data</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <h2>Descripción del problema</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-                <h2>Descripción del problema</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
-
+                <p>Con más de 100 millones de píxeles colocados sobre el mural y más de 10 millones de usuarios únicos, es imposible procesar esta información sin la ayuda de Big Data.</p>
+                
+                <h2>Descripción de los datos</h2>
+                <p>El formato de los datos es csv, han sido obtenidos de la página de Kaggle. La información se divide en: la hora en la que se ha introducido el píxel en formato UTC, el hash del usuario, el color del píxel en formato hexadecimal y las coordenadas. El conjunto de los datos asciende a casi 22 GB.  </p>
+                <p>Puedes hacer click <a href="https://www.kaggle.com/datasets/antoinecarpentier/redditrplacecsv">aquí</a> para acceder a los datos.</p>
             </div>
         </div>
     </div>
@@ -70,6 +69,12 @@
     <div id="ctn-codigo">
         <h2>Descripcion del código</h2>
         <p>Se han desarrollado los siguientes scripts en Python, para ver los contenidos o descargarlos, dirigirse a la carpeta <a href="https://github.com/YeF4n/rPlaceAnalysis/tree/main/scripts">scripts</a>.</p>
+    </div>
+    <div id="ctn-infraestructura">
+        <h2>Infraestructura</h2>
+    </div>
+    <div id="ctn-tutorial-spark">
+        <h2>Cómo ejecutar PySpark por Local</h2>
     </div>
     <footer>
         <p></p>
