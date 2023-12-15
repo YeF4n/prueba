@@ -49,17 +49,34 @@ _Pyspark_:Biblioteca de Python que se utiliza como interfaz para Apache Spark. C
 Los lenguajes que necesitaremos serán HTML y JavaScript para hacer la página web y Python para aplicar el marco de procesamiento de datos de Apache Spark para analizar los datos que tenemos.
 Utilizaremos Visual Code como herramienta principal para codificar, Google Cloud para almacenar los datos y GitHub para trabajar de forma colaborativa.
 # Por hacer!!!!!!!!!
-### Como probar nuestro proyecto
-Para reproducir nuestro proyecto en google cloud se seguirán los siguientes pasos:
-Antes de nada se
+## Ejecuta PySpark por  Local
+### 1. Instalación de Python y pip
+Aplicamos estos comandos para actualizar la lista de paquetes disponibles, instalar Python 3 y luego instalar el administrador de paquetes de Python (pip) en un sistema basado en Debian, como Ubuntu.
 
-**1-** Create a Dataproc cluster from the Cloud Shell:
-gcloud dataproc clusters create example-cluster --region europe-west6 --master-boot-disk-size 50GB --worker-boot-disk-size 50GB --enable-component-gateway
 
-**2-** Go to Navigation menu () > Dataproc > Clusters, click on the cluster name to get the Cluster details, then click on VM Instances.
+```
+$ sudo apt update
+$ sudo apt install python3
+$ sudo apt install python3-pip
+```
+### 2. Instalación de Java Runtime Enviorment(JRE)
+Este comando instala el entorno de ejecución de Java (Java Runtime Environment, JRE) predeterminado en un sistema basado en Debian, como Ubuntu. El JRE es necesario para ejecutar aplicaciones Java en el sistema.
 
-**3-** Connect to the cluster's master node using SSH.
+```$ sudo apt install default-jre```
+### 3. Instalación de PySpark
+Este código instala la biblioteca PySpark utilizando el administrador de paquetes de Python, pip. Este comando descarga e instala la biblioteca PySpark y sus dependencias necesarias en tu entorno de Python.
 
-**4-** 
-```yg8gyg```
+```$ pip install pyspark```
+### 4. Ejecuta los Python Scripts
+Este comando ejecuta un script de Apache Spark usando el programa spark-submit. En este caso, pondremos en <script>  el nombre del script de Spark que deseas ejecutar.
+
+```$ spark-submit <script>```
+## Ejecuta PySpark por Cloud
+Este comando crea un clúster de Google Cloud Dataproc en la región "europe-west6" con un nodo maestro y nodos de trabajo, y establece el tamaño de los discos de arranque tanto para el nodo maestro como para los nodos de trabajo en 50 GB.
+
+```$ gcloud dataproc clusters create example-cluster --region europe-west6 --enable-component-gateway --master-boot-disk-size 50GB --worker-boot-disk-size 50GB```
+A continuación,
+
+```$ BUCKET=gs://<your bucket name> ```
+
 ## Resultados
