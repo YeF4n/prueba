@@ -48,7 +48,9 @@ _Pyspark_:Biblioteca de Python que se utiliza como interfaz para Apache Spark. C
 
 Los lenguajes que necesitaremos serán HTML y JavaScript para hacer la página web y Python para aplicar el marco de procesamiento de datos de Apache Spark para analizar los datos que tenemos.
 Utilizaremos Visual Code como herramienta principal para codificar, Google Cloud para almacenar los datos y GitHub para trabajar de forma colaborativa.
-# Por hacer!!!!!!!!!
+# Como ejecutar el proyecto
+Antes de nada necesitaremos una cuenta de Google Cloud con saldo, un proyecto de Cloud (el predeterminado sirve), un bucket que contenga una carpeta llamada input con el csv anteriormente mencionado y los .py descargados en el bucket, en el mismo directorio que la carpeta input.
+
 ## Ejecuta PySpark por  Local
 ### 1. Instalación de Python y pip
 Aplicamos estos comandos para actualizar la lista de paquetes disponibles, instalar Python 3 y luego instalar el administrador de paquetes de Python (pip) en un sistema basado en Debian, como Ubuntu.
@@ -74,9 +76,24 @@ Este comando ejecuta un script de Apache Spark usando el programa spark-submit. 
 ## Ejecuta PySpark por Cloud
 Este comando crea un clúster de Google Cloud Dataproc en la región "europe-west6" con un nodo maestro y nodos de trabajo, y establece el tamaño de los discos de arranque tanto para el nodo maestro como para los nodos de trabajo en 50 GB.
 
-```$ gcloud dataproc clusters create example-cluster --region europe-west6 --enable-component-gateway --master-boot-disk-size 50GB --worker-boot-disk-size 50GB```
-A continuación,
+```
+$ gcloud dataproc clusters create example-cluster --region europe-west6 --enable-component-gateway --master-boot-disk-size 50GB --worker-boot-disk-size 50GB
+```
+A continuación, ejecutamos el siguiente comando para establecer BUCKET como el bucket que creamos con anterioridad,
 
 ```$ BUCKET=gs://<your bucket name> ```
 
-## Resultados
+Y ahora, para ejecutar cada uno de los códigos tendríamos que realizar lo siguiente (Nos liamos un poco con los códigos debido a que _Matplotlib_ no podía guardar directamente las gráficas en el bucket):
+Los tres primeros al generar gráficas con _Matplotlib_ necesitamos pasarle como parámetro el ID del bucket donde queremos que lo guarde.
+
+Ejecutar color.py:  ```spark-submit <numero workers> <numero ejecutores> $BUCKET/color.py $BUCKET/input <nombre archivo salida> <ID bucket>```
+
+Ejecutar colorMasUsadoHora.py: ```spark-submit <numero workers> <numero ejecutores> $BUCKET/colorMasUsadoHora.py $BUCKET/input $BUCKET/<nombre archivo salida> <ID bucket>```
+
+Ejecutar horasMasActividad.py: ```spark-submit <numero workers> <numero ejecutores> $BUCKET/horasMasActividad.py $BUCKET/input $BUCKET/<nombre archivo salida> <ID bucket>```
+
+Los últimos dos códigos generan un txt que será procesado para mostrar una tabla con los valores.
+
+Ejecutar pixelesMasMovidos.py: ```spark-submit <numero workers> <numero ejecutores> $BUCKET/pixelesMasMovidos.py $BUCKET/input $BUCKET/<nombre archivo salida>```
+
+Ejecutar userMasActivo.py: ```spark-submit  <numero workers> <numero ejecutores> $BUCKET/userMasActivo.py $BUCKET/input $BUCKET/<nombre archivo salida>```
