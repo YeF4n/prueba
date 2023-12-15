@@ -1,5 +1,5 @@
 body {
-    display: block;
+   display:block;
     
     height: 50vh;
 }
@@ -38,9 +38,22 @@ header img {
     margin-top: 20px;
     margin-bottom: 20px;
 }
-
+#ctn-presentacion, #ctn-analisis-datos{
+    margin-left: 15px;
+    margin-right: 15px;
+}
 #ctn-video{
     max-height: 500px;
     margin-top: 20px;
     margin-left: 20px;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: #ffffff;
+}
+::-webkit-scrollbar-thumb{
+    margin-right: -8px;
+    border-radius: 10px;
+    background: #cfcfcf;
 }
