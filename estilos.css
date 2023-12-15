@@ -41,6 +41,7 @@ header img {
 #ctn-presentacion, #ctn-analisis-datos{
     margin-left: 15px;
     margin-right: 15px;
+    margin-bottom: 50px;
 }
 #ctn-video{
     max-height: 500px;
