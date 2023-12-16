@@ -41,9 +41,13 @@ Debido a que ciertas casillas del csv están vacías (en la columna del timestam
 ### Infraestructura
 Para el desarrollo del proyecto hemos utilizado las siguientes herramientas:
 _Github_: Control de versiones, almacenamiento de datos y setup de la página web (github pages).
+
 _Google Cloud_: Almacenamiento del csv y los códigos y ejecución de los códigos.
+
 _Matplotlib_: Librería de Python para la creación de los gráficos que generan los códigos.
+
 _Python_: Lenguaje de programación usado para generar los códigos.
+
 _Pyspark_:Biblioteca de Python que se utiliza como interfaz para Apache Spark. Con PySpark, podemos realizar operaciones en datasets y aprovechar la programación funcional paralela.
 
 Los lenguajes que necesitaremos serán HTML y JavaScript para hacer la página web y Python para aplicar el marco de procesamiento de datos de Apache Spark para analizar los datos que tenemos.
@@ -102,3 +106,13 @@ Ejecutar userMasActivo.py: ```spark-submit  <numero workers> <numero ejecutores>
 
 ![Gráficas_tiempos](https://github.com/YeF4n/rPlaceAnalysis/assets/100349938/43e63a15-7eb1-41d5-beab-85e8d4aee1ed)
 
+Los speed-up han sido los siguientes:
+[color.py](/scripts/color.py): 
+
+[horasMasActividad.py](scripts/horasMasActividad.py): 
+
+[userMasActivo.py](scripts/userMasActivo.py): 
+
+[pixelesMasMovidos.py](scripts/pixelesMasMovidos.py): 
+
+[colorMasUsadoHora.py](scripts/colorMasUsadoHora.py): 
