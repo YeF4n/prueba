@@ -252,7 +252,44 @@
     </div>
 
     <div id="ctn-advanced-features">
-        
+        <h2>Funciones a destacar</h2>
+        <p>La siguiente línea la usamos mucho ya que el timestamp ofrecido por el csv es bastante raro y completo por lo que tuvimos que refactorizarlo para usarlo.</p>
+        <pre>
+            <code class="languague-python">
+                df = spark.read.option("header", "true").csv(input_csv) \
+                .withColumn("timestamp", unix_timestamp(col("timestamp"), "yyyy-MM-dd HH:mm:ss.SSS z").cast(TimestampType())) \
+                .withColumn("hour", hour(col("timestamp"))) \
+                .withColumn("day", dayofmonth(col("timestamp"))) 
+            </code>
+        </pre>
+
+        <p>Esta línea nos sirvió para filtrar entradas del dataset que tuviese algún tipo de problema al tenr algún campo NULL.</p>
+        <pre>
+            <code class="languague-python">
+                result_df = result_df.filter(col("day").isNotNull() & col("hour").isNotNull() & col("pixel_color").isNotNull()) 
+            </code>
+        </pre>
+        <p>Esta función nos sirvió para mostrar la gráfica de colores más usados por hora, pudiendose observar que cuando se mostraba el color blanco lo cambiase de Puntos a asteriscos y el color lo pusiese con una tonalidad más facil de distinguir.</p>
+        <pre>
+            <code class="languague-python">
+                for color, series in color_series.items():
+                    rgb_color = mcolors.hex2color(color)
+                    if color == '#FFFFFF':
+                        rgb_color = mcolors.hex2color('#F8CFC8')
+                        marker = '*'
+                    else:
+                        marker = 'o'
+            
+                plt.plot(series["x"], series["y"], label=color, marker=marker, color=rgb_color)            
+            </code>
+        </pre>
+        <p>Los códigos que generaban imagenes con Matplotlib no podían guardar las imágenes directamente en Google Cloud por lo que primero los guardabamos localmente.</p>
+        <pre>
+            <code class="languague-python">
+                local_outputpath = '/tmp/day{}_activity_count.png'.format(day)
+                plt.savefig(local_output_path)
+            </code>
+        </pre>
     </div>
     
     <div style="margin-bottom: 50px;" id="ctn-conclusion">
