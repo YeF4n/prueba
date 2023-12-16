@@ -93,8 +93,7 @@
                 <p>Como mención honorífica, tenemos la bandera de Canada, que no lograron completar porque los usuarios estaban cambiando todo el rato la hoja de alce de su bandera.</p>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/TyVXmpHQOqk?si=18fsSQeev1p3YlRd&amp;playback_rate=1.5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
-        </div>
-       
+        </div>       
     </div>
 
     <!--Para cada apartado del readme haremos un div con un nombre-->
@@ -118,9 +117,27 @@
         <h3><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/colorMasUsadoHora.py">colorMasUsadoHora.py</a></h3>
         <p>Utiliza de nuevo la columna timestampt y por cada hora de cada día muestra en forma de gráfico de lineas los 10 colores que más se han utilizado . Hemos establecido el límite superior de la gráfica a 1500000 elementos para poder apreciar la diferencia entre los valores debido a que el valor #FFFFFF al final de la gráfica toma un valor exorbitado.</p>
     </div>
+
+    <div id="ctn-performance">
+        <h2>Evaluación del rendimiento</h2>
+        <p>Como mejor ha funcionado ha sido con 2 workers y 8 cores, algo que era esperable, ya que es la que utilizaba el mayor número de nodos.</p>
+        <img src="img/web/Gráficas_tiempos.png">
+    </div>
+
     <div id="ctn-infraestructura">
         <h2>Infraestructura</h2>
+        <p>Para el desarrollo del proyecto hemos utilizado las siguientes herramientas:</p>
+        <ul>
+            <li><i>Github</i>: Control de versiones, almacenamiento de datos y setup de la página web (github pages).</li>
+            <li><i>Google Cloud</i>: Almacenamiento del csv y los códigos y ejecución de los códigos.</li>
+            <li><i>Matplotlib</i>: Librería de Python para generar gráficas.</li>
+            <li><i>Python</i>: Lenguaje de programación utilizado para el desarrollo de los códigos.</li>
+            <li><i>HTML/JavaScript</i>: Programación del freont-end de la página web.</li>
+            <li><i>Pyspark</i>: Biblioteca de Python que se utiliza como interfaz para Apache Spark. Con PySpark, podemos realizar operaciones en datasets y aprovechar la programación funcional paralela.</li>
+            <li><i>Visual Code</i>: Editor de código fuente para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código.</li>
+        </ul>
     </div>
+
     <div id="ctn-tutorial-spark">
         <h2>Cómo ejecutar PySpark por Local</h2>
         <p>Antes de nada necesitaremos una cuenta de Google Cloud con saldo, un proyecto de Cloud (el predeterminado sirve), un bucket que contenga una carpeta llamada input con el csv anteriormente mencionado y los .py descargados en el bucket, en el mismo directorio que la carpeta input.</p>
@@ -156,7 +173,7 @@
         <p>Este comando ejecuta un script de Apache Spark usando el programa spark-submit. En este caso, pondremos en $script el nombre del script de Spark que deseas ejecutar. </p>
         <pre>
             <code class="languague-bash">
-                $ spark-submit $script
+                $ spark-submit #script
             </code>
         </pre>
 
@@ -171,7 +188,7 @@
         <p>A continuación, ejecutamos el siguiente comando para establecer BUCKET como el bucket que creamos con anterioridad,</p>
         <pre>
             <code class="languague-bash">
-                $ BUCKET=gs://$yourBUCKET
+                $ BUCKET=gs://#yourBUCKET
             </code>
         </pre>
         <p>Y ahora, para ejecutar cada uno de los códigos tendríamos que realizar lo siguiente: Los tres primeros al generar gráficas con <i>Matplotlib</i> necesitamos pasarle como parámetro el ID del bucket donde queremos que lo guarde.</p>
@@ -179,20 +196,20 @@
         <p>Ejecutar color.py:</p>
         <pre>
             <code class="languague-bash">
-                spark-submit $numero-workers $numero-ejecutores $BUCKET/color.py $BUCKET/input $nombre-archivo-salida $ID-bucket
+                spark-submit #numero-workers #numero-ejecutores $BUCKET/color.py $BUCKET/input #nombre-archivo-salida #ID-bucket
             </code>
         </pre>
         <p>Ejecutar colorMasUsadoHora:</p>
         <pre>
             <code class="languague-bash">
-                spark-submit $numero-workers $numero-ejecutores $BUCKET/colorMasUsadoHora.py $BUCKET/input $BUCKET/$nombre-archivo-salida $ID-bucket
+                spark-submit #numero-workers #numero-ejecutores $BUCKET/colorMasUsadoHora.py $BUCKET/input $BUCKET/#nombre-archivo-salida #ID-bucket
             </code>
         </pre>
 
         <p>Ejecutar horasMasActividad.py:</p>
         <pre>
             <code class="languague-bash">
-                spark-submit $numero-workers $numero-ejecutores $BUCKET/horasMasActividad.py $BUCKET/input $BUCKET/$nombre-archivo-salida $ID-bucket
+                spark-submit #numero-workers #numero-ejecutores $BUCKET/horasMasActividad.py $BUCKET/input $BUCKET/#nombre-archivo-salida #ID-bucket
             </code>
         </pre>
 
@@ -201,24 +218,33 @@
         <p>Ejecutar pixelesMasMovidos.py:</p>
         <pre>
             <code class="languague-bash">
-                spark-submit $numero-workers $numero-ejecutores $BUCKET/pixelesMasMovidos.py $BUCKET/input $BUCKET/$nombre-archivo-salida
+                spark-submit #numero-workers #numero-ejecutores $BUCKET/pixelesMasMovidos.py $BUCKET/input $BUCKET/#nombre-archivo-salida
             </code>
         </pre>
 
         <p>Ejecutar userMasActivo.py:</p>
         <pre>
             <code class="languague-bash">
-                spark-submit $numero-workers $numero-ejecutores $BUCKET/userMasActivo.py $BUCKET/input $BUCKET/$nombre-archivo-salida
+                spark-submit #numero-workers #numero-ejecutores $BUCKET/userMasActivo.py $BUCKET/input $BUCKET/#nombre-archivo-salida
             </code>
         </pre>
 
     </div>
-    <div id="ctn-performance">
-        <h2>Evaluación del rendimiento</h2>
+
+    <div id="ctn-advanced-features">
+        
     </div>
+    
     <div id="ctn-conclusion">
         <h2>Conclusión</h2>
+        <p>Como era la primera vez desde 2017 que se hizo un r/Place, muchas personas desconocían este evento. Sin embargo, el número de participantes activos en el mural sólo fue en aumento. Ni los organizadores se esperaron tal acogida y es por ello mismo que tuvieron que aumentar dos veces el tamaño del mural.
+        Hay participantes de todo tipo, están los que entran solo a poner un píxel cualquiera de forma aleatoria cuando se acuerdan, están los que se vuelcan con una comunidad para hacer diseños, están los que no quieren que Canadá forme su bandera, están los que intentan competir contra los bots franceses...</p>
+        <p>Nuestro intención desde el principio ha sido intentar abstraer del historial de píxeles colocados datos interesantes, que llamen la atención, tanto para los que participaron en el evento como para los que no sabían de su existencia.
+        No podríamos haber logrado esto sin utilizar el procesamiento de Big Data por la increíble cantidad de información que teníamos a mano. Nos habría gustado compartir más gráficos con curiosidades, pero hicimos lo que pudimos con la limitación de que los datos sólo tuviesen 4 campos. </p>
+        <p>Esperamos que os haya gustado nuestra pequeña aportación al r/place 2022.</p>
     </div>
+
+
     <footer>
         <p>Proyecto realizado por:</p>
         <ul>      

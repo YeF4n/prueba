@@ -40,6 +40,7 @@ Debido a que ciertas casillas del csv están vacías (en la columna del timestam
 
 ### Infraestructura
 Para el desarrollo del proyecto hemos utilizado las siguientes herramientas:
+
 _Github_: Control de versiones, almacenamiento de datos y setup de la página web (github pages).
 
 _Google Cloud_: Almacenamiento del csv y los códigos y ejecución de los códigos.
