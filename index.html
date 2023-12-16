@@ -9,6 +9,10 @@
     <!-- Incluye la biblioteca de resaltado de sintaxis -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
 
 </head>
 <body>
@@ -40,6 +44,8 @@
             </div>
         </div>
     </div>
+
+    <div class="separador"></div>
     <!--Parte más freestyle, vamos poniendo las gráficas y las explicamos un poco. 
         No hay orden  concreto, lo ponemos como mejor nos parezca-->
     <div id="ctn-analisis-datos">
@@ -51,37 +57,46 @@
                 <img src="img/web/masActividad.jpg">
             </div>
         </div>
-        <div class="row">
-            <h3>Gráfica de la actividad durante el evento</h3>
-            <div class="col-md-6" id="grafica">                
+        <div class="separador"></div>
+         
+            <div class="row">
+              <div class="col-md-6 offset-md-1" id="grafica1">  
+                <h3 id="titulo1">Gráfica de la actividad durante el evento</h3>              
                 <img src="img/web/FrecuenciaColores.png">
-            </div>
-            <div class="col-md-6" id="explicacion">               
+              </div>
+              <div class="col-md-4" id="explicacion1">               
+                
                 <p>Esta gráfica representa las veces que se han colocado cada color durante las 84 horas que ha durado el evento. Hay una gran diferencia entre el blanco y el negro en comparación al resto, acercándose a los 35 millones de píxeles colocados.</p>
+              </div>
             </div>
-        </div>
-        <div class="row">
-            <h3>Gráfica de los colores más usados en cada hora</h3>   
-            <div class="col-md-6" id="grafica">                
-                <img src="img/web/top10ColoresPorHora.png">
+        
+            <div class="separador"></div>
+            <div class="row">
+                <h3 id="titulo2">Gráfica de los colores más usados en cada hora</h3>   
+                <div class="col-md-6" id="grafica2">                
+                    <img src="img/web/top10ColoresPorHora.png">
+                </div>
+                <div class="col-md-4" id="explicacion2">
+                    <p>Podemos ver que el negro ha dominado por encima de todos los colores, y el blanco lo sigue de muy cerca, concordando con la gráfica anterior. El pico que podemos ver al final es cuando se termina el evento, donde cualquier color que se colocase en el mural, se convertía en blanco.</p>
+                </div>
             </div>
-            <div class="col-md-6" id="expliciacion">
-                <p>Podemos ver que el negro ha dominado por encima de todos los colores, y el blanco lo sigue de muy cerca, concordando con la gráfica anterior. El pico que podemos ver al final es cuando se termina el evento, donde cualquier color que se colocase en el mural, se convertía en blanco.</p>
-            </div>
-        </div>     
+          
+            <div class="separador"></div>
+
         <div class="row">
             <h3>Los píxeles que más se han cambiado</h3>            
             <p>Estos son los píxeles que más cambios han recibido. La esquina superior izquierda es la más cambiada con diferencia, y una de las razones es porque está presente desde que se inició el evento. Luego podemos observas que las personas les encanta cambiar el centre de los dibujos, porque se nota mucho más que si cambias otra parte. Están también la broma de cambiar la o por la u en el .com de las páginas, que ha sido muy popular.</p>
-            <div class="col-md-12" id="grafica">                
+            <div class="col-md-12" id="grafica3">                
                 <img src="img/web/mostEditedPixel.png">
             </div>
-            <div class="col-md-12">
+            <div class="col-md-12" id="explicacion3">
                 <p>Como mención honorífica, tenemos la bandera de Canada, que no lograron completar porque los usuarios estaban cambiando todo el rato la hoja de alce de su bandera.</p>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/TyVXmpHQOqk?si=18fsSQeev1p3YlRd&amp;playback_rate=1.5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>
        
     </div>
+
     <!--Para cada apartado del readme haremos un div con un nombre-->
     <div id="ctn-codigo">
         <h2>Descripcion del código</h2>

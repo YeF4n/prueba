@@ -1,6 +1,7 @@
 body {
-   display:block;
-    
+    display:block;
+    padding-left: 20px;
+    padding-right: 20px;
     height: 50vh;
 }
 
@@ -15,6 +16,7 @@ header {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    
     
 }
 header h1 {
@@ -33,10 +35,10 @@ header img {
 #ctn-descripcion {
     max-height: 500px; /* Puedes ajustar la altura máxima según tus necesidades */
     overflow: auto;
-    max-width: 580px;
+    max-width: 700px;
     margin-left: 20px;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    margin-top: 60px;
+    
 }
 #ctn-presentacion, #ctn-analisis-datos{
     margin-left: 15px;
@@ -45,7 +47,7 @@ header img {
 }
 #ctn-video{
     max-height: 500px;
-    margin-top: 20px;
+    
     margin-left: 20px;
 }
 
@@ -61,4 +63,61 @@ header img {
     margin-right: -8px;
     border-radius: 10px;
     background: #cfcfcf;
+}
+
+#titulo1 {
+    margin-left: 100px; /* Ajusta el margen izquierdo según tus necesidades */
+  }
+
+#grafica1 {
+    margin-left: 20px; /* Ajusta el margen izquierdo según tus necesidades */
+
+  }
+  #grafica1 img {
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Para mantener la proporción original de la imagen */
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    
+  }
+#explicacion1 {
+    font-size: 32px; 
+    margin-right: 20px; /* Ajusta el margen derecho según tus necesidades */
+    margin-top: 150px;
+}
+
+.separador {
+    border-top: 2px solid #ccc; /* Estilo de la línea separadora */
+    margin-top: 10px; /* Espaciado superior */
+    margin-bottom: 20px; /* Espaciado inferior */
+  }
+
+
+#titulo2 {
+    margin-left: 100px; /* Ajusta el margen izquierdo según tus necesidades */
+  }
+
+#grafica2 {
+    margin-left: 20px; /* Ajusta el margen izquierdo según tus necesidades */
+
+  }
+  #grafica2 img {
+    width: 110%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Para mantener la proporción original de la imagen */
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    margin-right: 20px;
+  }
+#explicacion2 {
+    font-size: 32px; 
+    margin-right: 20px; /* Ajusta el margen derecho según tus necesidades */
+    margin-top: 100px;
+}
+
+#grafica3 img {
+    width: 60%;
+    height: auto;
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+    margin-right: 20px;
+    align-items: center;
 }
