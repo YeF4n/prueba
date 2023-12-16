@@ -112,78 +112,78 @@ Los tiempos han sido los siguientes:
 
           -Master: 264
   
-          -2 W 2 C: 96
+          -2 W 2 C: 96   -Speedup = 264/96 = 2,75
   
-          -2 W 4 C: 96
+          -2 W 4 C: 96   -Speedup = 264/96 = 2,75
   
-          -2 W 8 C: 59
+          -2 W 8 C: 59   -Speedup = 264/59 = 4,47
   
-          -4 W 2 C: 66
+          -4 W 2 C: 66   -Speedup = 264/66 = 4
   
-          -4 W 3 C: 60
+          -4 W 3 C: 60   -Speedup = 264/60 = 4,4
   
-          -4 W 4 C: 60
+          -4 W 4 C: 60   -Speedup = 264/60 = 4,4
 
 [horasMasActividad.py](scripts/horasMasActividad.py): 
 
-          -Master: 462
+          -Master: 462   
   
-          -2 W 2 C: 150
+          -2 W 2 C: 150   -Speedup = 462/150 = 3,08
   
-          -2 W 4 C: 156
+          -2 W 4 C: 156   -Speedup = 462/156 = 2,96
   
-          -2 W 8 C: 84
+          -2 W 8 C: 84   -Speedup = 462/84 = 5,5
           
-          -4 W 2 C: 90
+          -4 W 2 C: 90   -Speedup = 462/90 = 5,133
           
-          -4 W 3 C: 96
+          -4 W 3 C: 96   -Speedup = 462/96 = 4,81
           
-          -4 W 4 C: 96
+          -4 W 4 C: 96   -Speedup = 462/96 = 4,81
   
 [pixelesMasMovidos.py](scripts/pixelesMasMovidos.py): 
 
-          -Master: 342
+          -Master: 342   
           
-          -2 W 2 C: 114
+          -2 W 2 C: 114   -Speedup = 342/114 = 3
           
-          -2 W 4 C: 120
+          -2 W 4 C: 120   -Speedup = 342/120 = 2,85
           
-          -2 W 8 C: 66
+          -2 W 8 C: 66   -Speedup = 342/66 = 5,18
           
-          -4 W 2 C: 72
+          -4 W 2 C: 72   -Speedup = 342/72 = 4,75
           
-          -4 W 3 C: 78
+          -4 W 3 C: 78   -Speedup = 342/78 = 4,38
           
-          -4 W 4 C: 78
+          -4 W 4 C: 78   -Speedup = 342/78 = 4,38
 
 [userMasActivo.py](scripts/userMasActivo.py): 
 
-          -Master: 600
+          -Master: 600 
           
-          -2 W 2 C: 144
+          -2 W 2 C: 144   -Speedup = 600/144 = 4,16
           
-          -2 W 4 C: 150
+          -2 W 4 C: 150   -Speedup = 600/150 = 4
           
-          -2 W 8 C: 84
+          -2 W 8 C: 84   -Speedup = 600/84 = 7,14
           
-          -4 W 2 C: 90
+          -4 W 2 C: 90   -Speedup = 600/90 = 6,67
           
-          -4 W 3 C: 90
+          -4 W 3 C: 90   -Speedup = 600/90 = 6,67
           
-          -4 W 4 C: 90
+          -4 W 4 C: 90   -Speedup = 600/90 = 6,67
           
 [colorMasUsadoHora.py](scripts/colorMasUsadoHora.py): 
 
-          -Master: 900
+          -Master: 900  
           
-          -2 W 2 C: 252
+          -2 W 2 C: 252   -Speedup = 900/252 = 3,571
           
-          -2 W 4 C: 252
+          -2 W 4 C: 252   -Speedup = 900/252 = 3,571
           
-          -2 W 8 C: 132
+          -2 W 8 C: 132   -Speedup = 900/132 = 6,82
           
-          -4 W 2 C: 144
+          -4 W 2 C: 144   -Speedup = 900/144 = 6,25
           
-          -4 W 3 C: 144
+          -4 W 3 C: 144   -Speedup = 900/144 = 6,25
           
-          -4 W 4 C: 150
+          -4 W 4 C: 150   -Speedup = 900/150 = 6
