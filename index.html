@@ -6,6 +6,10 @@
     <title>Análisis de r/Place</title>
     <link rel="stylesheet" href="estilos.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <!-- Incluye la biblioteca de resaltado de sintaxis -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/styles/default.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.2.0/highlight.min.js"></script>
+
 </head>
 <body>
     <header>
@@ -21,9 +25,9 @@
             </div>
             <!--Intro de la presentación, aquí ponemos lo del project proposal-->
             <div class="col-md-6" id="ctn-descripcion">
-                <h2>Descripción del proyecto</h2>
-                <p>El proyecto trata sobre el análisis del mural llamado r/place creado en April Fools’ Day del 2017 en Reddit.</p>
-                <p>El lienzo inicialmente es de 1000 x 1000 píxeles, aunque a lo largo de los dos días que dura el evento, su tamaño aumenta hasta los 2000 x 2000 píxeles. Los usuarios pueden cambiar el color de un píxel cada 5 minutos. Aunque este proyecto se crea cada año desde 2021 se ha elegido el de 2017 ya que fue el primero que se creó.</p>
+                <h2>Descripción</h2>
+                <p>El proyecto trata sobre el análisis del mural de r/place 2022. El r/place es un evento que se creó en el April Fools’ Day del 2017 en Reddit.</p>
+                <p>El lienzo inicialmente es de 1000 x 1000 píxeles, aunque a lo largo de la duración del evento, su tamaño aumenta hasta los 2000 x 2000 píxeles. Los usuarios pueden cambiar el color de un píxel cada 5 minutos. Aunque este proyecto se crea cada año desde 2021 se ha elegido el de 2017 ya que fue el primero que se creó.</p>
                 <p>Comunidades de distintos ámbitos se organizan para crear imágenes a gran escala como por ejemplo banderas de sus países, monumentos, logos, comida o incluso personajes de series o películas.</p>
                 <p>En este proyecto se van a estudiar las zonas que más actividad han tenido a través de un mapa de calor, así como los colores más usados y a qué hora hay más actividad. Viendo los dibujos dónde más gente participa se podrá ver qué comunidades son más activos, las zonas más disputadas, cuántos píxeles ha puesto la persona con más actividad en el mural, o si hay zonas que hayan sobrevivido desde el inicio.</p>
                 
@@ -43,7 +47,7 @@
         <div class="row">
             <h3>Gráfica de la actividad durante el evento</h3>
             <div class="col-md-12" id="graficaActividad">                
-                <p>Aqui podemos ver la cantidad de píxeles que fueron colocados cada hora desde el inicio del evento hasta su fin.</p>
+                <p>Aqui podemos ver la cantidad de píxeles que fueron colocados cada hora desde el inicio del evento hasta su fin. La mayor actividad cada día se registra entre las 20:00 y 24:00, y podemos apreciar cómo aumenta la actividad mientras avanza las horas porque cada vez más personas se enteraban de este evento.</p>
                 <img src="img/web/masActividad.jpg">
             </div>
         </div>
@@ -53,15 +57,19 @@
                 <img src="img/web/FrecuenciaColores.png">
             </div>
             <div class="col-md-6" id="explicacion">               
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                </p>
+                <p>Esta gráfica representa las veces que se han colocado cada color durante las 84 horas que ha durado el evento. Hay una gran diferencia entre el blanco y el negro en comparación al resto, acercándose a los 35 millones de píxeles colocados.</p>
             </div>
         </div>
         <div class="row">
             <h3>Los píxeles que más se han cambiado</h3>            
-            
+            <p>Estos son los píxeles que más cambios han recibido. La esquina superior izquierda es la más cambiada con diferencia, y una de las razones es porque está presente desde que se inició el evento. Luego podemos observas que las personas les encanta cambiar el centre de los dibujos, porque se nota mucho más que si cambias otra parte. Están también la broma de cambiar la o por la u en el .com de las páginas, que ha sido muy popular.</p>
             <div class="col-md-12" id="grafica">                
                 <img src="img/web/mostEditedPixel.png">
+            </div>
+            <div class="col-md-12">
+                <p>Como mención honorífica, tenemos la bandera de Canada, que no lograron completar porque los usuarios estaban cambiando todo el rato la hoja de alce de su bandera.</p>
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TyVXmpHQOqk?si=18fsSQeev1p3YlRd&amp;playback_rate=1.5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
             </div>
         </div>    
     </div>
@@ -69,15 +77,123 @@
     <div id="ctn-codigo">
         <h2>Descripcion del código</h2>
         <p>Se han desarrollado los siguientes scripts en Python, para ver los contenidos o descargarlos, dirigirse a la carpeta <a href="https://github.com/YeF4n/rPlaceAnalysis/tree/main/scripts">scripts</a>.</p>
+        <p>En todos los códigos hay una primera lectura de los argumentos con los que se va a trabajar (inserte csv). Debido a que el csv contiene un encabezado a la hora de leerlo se añade la opción para eliminarlo del conjunto de datos. En todos los códigos que generan gráficas (color.py, colorMasUsado.py y horasMasActividad.py) se ha utilizado un parámetro extra que sirve para seleccionar el bucket en el que se desea que se guarde los resultados. Esto ha sido necesario ya que Matplotlib que es la librería que usamos para generar las imágenes no podía guardarlas directamente en el bucket. Para lo anterior se usa la función upload_blob. Debido a que ciertas casillas del csv están vacías (en la columna del timestamp) se realiza un filtro para eliminar la fila entera.</p>
+        
+        <h3><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/color.py">color.py</a></h3>
+        <p>Trabaja con la columna color que se muestra con su valor en hexadecimal, de la cual saca la suma de cada uno. Con estos datos el código procede a hacer una gráfica de barras en la cual se muestra en el eje Y el número de veces que se ha usado ese color. Para darle un caracter más visual a la gráfica se han presentado las barras del color correspondiente al modificado. Esto se guarda en un png en local (/tmp) el cual se transpasa al GCS (Google Cloud Storage) en la carpeta y bucket seleccionados.</p>
+    
+        <h3><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/horasMasActividad.py">horasMasActividad.py</a></h3>
+        <p>Trabaja con el timestamp en el que se ha puesto el dato (tanto dia como hora). Estos datos los ordena por timestamp de modificación, sumando para cada día y cada hora cuantos píxeles han sido modificados. Para cada día genera una gráfica de barras en las que aparecen las 24 horas del día en el eje X y el número de píxeles modificados en el Y.</p>
+    
+        <h3><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/userMasActivo.py">userMasActivo.py</a></h3>
+        <p>Trabaja con las columnas del id, contando cuantas veces aparece cada uno de ellos y ordenandolos de manera descendiente. De esta forma con la función limit podemos sacar los 10 usuarios con más actividad y sacar un fichero con el id del usuario y las veces que escribe. El resultado se guarda en el GCS directamente.</p>
+
+        <h3><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/pixelesMasMovidos.py">pixelesMasMovidos.py</a></h3>
+        <p>Utiliza la columna de coordenadas y al igual que userMasActivo, cuenta cuantas veces aparece cada coordenada, ordenandolas de manera decreciente y mostrandose mediante la función limit las 10 coordenadas que más se han modificado. El fichero que se guarda directamente en el GCS contiene la coordenada y las veces que se ha modificado.</p>
+
+        <h3><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/colorMasUsadoHora.py">colorMasUsadoHora.py</a></h3>
+        <p>Utiliza de nuevo la columna timestampt y por cada hora de cada día muestra en forma de gráfico de lineas los 10 colores que más se han utilizado . Hemos establecido el límite superior de la gráfica a 1500000 elementos para poder apreciar la diferencia entre los valores debido a que el valor #FFFFFF al final de la gráfica toma un valor exorbitado.</p>
     </div>
     <div id="ctn-infraestructura">
         <h2>Infraestructura</h2>
-    </div>
+        </div>
     <div id="ctn-tutorial-spark">
         <h2>Cómo ejecutar PySpark por Local</h2>
+        <p>Antes de nada necesitaremos una cuenta de Google Cloud con saldo, un proyecto de Cloud (el predeterminado sirve), un bucket que contenga una carpeta llamada input con el csv anteriormente mencionado y los .py descargados en el bucket, en el mismo directorio que la carpeta input.</p>
+        
+        <h3>Ejecuta PySpark por Local</h3>
+        
+        <h4>1. Instalación de Python y pip</h4>
+        <p>Aplicamos estos comandos para actualizar la lista de paquetes disponibles, instalar Python 3 y luego instalar el administrador de paquetes de Python (pip) en un sistema basado en Debian, como Ubuntu.</p>
+        <pre>
+            <code class="languague-bash">
+                $ sudo apt update
+                $ sudo apt install python3
+                $ sudo apt install python3-pip
+            </code>
+        </pre>
+        <h4>2. Instalación de Java Runtime Enviorment(JRE)</h4>
+        <p>Este comando instala el entorno de ejecución de Java (Java Runtime Environment, JRE) predeterminado en un sistema basado en Debian, como Ubuntu. El JRE es necesario para ejecutar aplicaciones Java en el sistema.</p>
+        <pre>
+            <code class="languague-bash">
+                $ sudo apt install default-jre
+            </code>
+        </pre>
+
+        <h4>3. Instalación de PySpark</h4>
+        <p>Este código instala la biblioteca PySpark utilizando el administrador de paquetes de Python, pip. Este comando descarga e instala la biblioteca PySpark y sus dependencias necesarias en tu entorno de Python.</p>
+        <pre>
+            <code class="languague-bash">
+                $ pip3 install pyspark
+            </code>
+        </pre>
+
+        <h4>4. Ejecuta los Python Scripts</h4>
+        <p>Este comando ejecuta un script de Apache Spark usando el programa spark-submit. En este caso, pondremos en $script el nombre del script de Spark que deseas ejecutar. </p>
+        <pre>
+            <code class="languague-bash">
+                $ spark-submit $script
+            </code>
+        </pre>
+
+        <h3>Ejecuta PySpark por Cloud</h3>
+        <p>Este comando crea un clúster de Google Cloud Dataproc en la región "europe-west6" con un nodo maestro y nodos de trabajo, y establece el tamaño de los discos de arranque tanto para el nodo maestro como para los nodos de trabajo en 50 GB.</p>
+        <pre>
+            <code class="languague-bash">
+                $ gcloud dataproc clusters create example-cluster --region europe-west6 --enable-component-gateway --master-boot-disk-size 50GB --worker-boot-disk-size 50GB
+            </code>
+        </pre>
+              
+        <p>A continuación, ejecutamos el siguiente comando para establecer BUCKET como el bucket que creamos con anterioridad,</p>
+        <pre>
+            <code class="languague-bash">
+                $ BUCKET=gs://$yourBUCKET
+            </code>
+        </pre>
+        <p>Y ahora, para ejecutar cada uno de los códigos tendríamos que realizar lo siguiente: Los tres primeros al generar gráficas con <i>Matplotlib</i> necesitamos pasarle como parámetro el ID del bucket donde queremos que lo guarde.</p>
+
+        <p>Ejecutar color.py:</p>
+        <pre>
+            <code class="languague-bash">
+                spark-submit $numero-workers $numero-ejecutores $BUCKET/color.py $BUCKET/input $nombre-archivo-salida $ID-bucket
+            </code>
+        </pre>
+        <p>Ejecutar colorMasUsadoHora:</p>
+        <pre>
+            <code class="languague-bash">
+                spark-submit $numero-workers $numero-ejecutores $BUCKET/colorMasUsadoHora.py $BUCKET/input $BUCKET/$nombre-archivo-salida $ID-bucket
+            </code>
+        </pre>
+
+        <p>Ejecutar horasMasActividad.py:</p>
+        <pre>
+            <code class="languague-bash">
+                spark-submit $numero-workers $numero-ejecutores $BUCKET/horasMasActividad.py $BUCKET/input $BUCKET/$nombre-archivo-salida $ID-bucket
+            </code>
+        </pre>
+
+        <p>Los últimos dos códigos generan un txt que será procesado para mostrar una tabla con los valores.</p>
+
+        <p>Ejecutar pixelesMasMovidos.py:</p>
+        <pre>
+            <code class="languague-bash">
+                spark-submit $numero-workers $numero-ejecutores $BUCKET/pixelesMasMovidos.py $BUCKET/input $BUCKET/$nombre-archivo-salida
+            </code>
+        </pre>
+
+        <p>Ejecutar userMasActivo.py:</p>
+        <pre>
+            <code class="languague-bash">
+                spark-submit $numero-workers $numero-ejecutores $BUCKET/userMasActivo.py $BUCKET/input $BUCKET/$nombre-archivo-salida
+            </code>
+        </pre>
+
+    </div>
+    <div id="ctn-performance">
+        <h2>Evaluación del rendimiento</h2>
     </div>
     <div id="ctn-conclusion">
-
+        <h2>Conclusión</h2>
     </div>
     <footer>
         <p>Proyecto realizado por:</p>
@@ -89,6 +205,9 @@
             <li>Óscar Iván Gutiérrez Parrado</li>
         </ul>        
     </footer>
-
+    <script>
+        // Resalta todos los bloques de código en la página
+        hljs.highlightAll();
+      </script>
 </body>
 </html>
