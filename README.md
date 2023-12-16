@@ -5,7 +5,7 @@ https://yef4n.github.io/rPlaceAnalysis/
 ## Descripción
 El proyecto trata sobre el análisis del mural llamado r/place creado en April Fools’ Day del 2017 en Reddit. 
 
-El lienzo inicialmente es de 1000 x 1000 píxeles, aunque a lo largo de los dos días que dura el evento, su tamaño aumenta hasta los 2000 x 2000 píxeles. Los usuarios pueden cambiar el color de un píxel cada 5 minutos. Aunque este proyecto se crea cada año desde 2021 se ha elegido el de 2017 ya que fue el primero que se creó.
+El lienzo inicialmente es de 1000 x 1000 píxeles, aunque a lo largo de la duración del evento, su tamaño aumenta hasta los 2000 x 2000 píxeles. Los usuarios pueden cambiar el color de un píxel cada 5 minutos. Aunque este proyecto se crea cada año desde 2021 se ha elegido el de 2017 ya que fue el primero que se creó.
 
 Comunidades de distintos ámbitos se organizan para crear imágenes a gran escala como por ejemplo banderas de sus países, monumentos, logos, comida o incluso personajes de series o películas.
 
