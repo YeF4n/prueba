@@ -106,7 +106,7 @@ Ejecutar userMasActivo.py: ```spark-submit  <numero workers> <numero ejecutores>
 
 ![Gráficas_tiempos](https://github.com/YeF4n/rPlaceAnalysis/assets/100349938/43e63a15-7eb1-41d5-beab-85e8d4aee1ed)
 
-Los tiempos han sido los siguientes:
+Los tiempos y speed-ups han sido los siguientes:
 
 [color.py](/scripts/color.py): 
 
