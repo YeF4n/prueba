@@ -99,5 +99,6 @@ Ejecutar pixelesMasMovidos.py: ```spark-submit <numero workers> <numero ejecutor
 Ejecutar userMasActivo.py: ```spark-submit  <numero workers> <numero ejecutores> $BUCKET/userMasActivo.py $BUCKET/input $BUCKET/<nombre archivo salida>```
 
 # Comparaciones de tiempos
-![top10ColoresPorHora](https://github.com/YeF4n/rPlaceAnalysis/assets/100349938/f8eeaf87-dd60-4b73-9c3e-e6aeb265a96d)
+
+![Gráficas_tiempos](https://github.com/YeF4n/rPlaceAnalysis/assets/100349938/43e63a15-7eb1-41d5-beab-85e8d4aee1ed)
 
