@@ -48,7 +48,7 @@ _Matplotlib_: Librería de Python para la creación de los gráficos que generan
 
 _Python_: Lenguaje de programación usado para generar los códigos.
 
-_Pyspark_:Biblioteca de Python que se utiliza como interfaz para Apache Spark. Con PySpark, podemos realizar operaciones en datasets y aprovechar la programación funcional paralela.
+_Pyspark_: Biblioteca de Python que se utiliza como interfaz para Apache Spark. Con PySpark, podemos realizar operaciones en datasets y aprovechar la programación funcional paralela.
 
 Los lenguajes que necesitaremos serán HTML y JavaScript para hacer la página web y Python para aplicar el marco de procesamiento de datos de Apache Spark para analizar los datos que tenemos.
 Utilizaremos Visual Code como herramienta principal para codificar, Google Cloud para almacenar los datos y GitHub para trabajar de forma colaborativa.
@@ -106,13 +106,49 @@ Ejecutar userMasActivo.py: ```spark-submit  <numero workers> <numero ejecutores>
 
 ![Gráficas_tiempos](https://github.com/YeF4n/rPlaceAnalysis/assets/100349938/43e63a15-7eb1-41d5-beab-85e8d4aee1ed)
 
-Los speed-up han sido los siguientes:
+Los tiempos han sido los siguientes:
+
 [color.py](/scripts/color.py): 
+  -Master: 264
+  -2 W 2 C: 96
+  -2 W 4 C: 96
+  -2 W 8 C: 59
+  -4 W 2 C: 66
+  -4 W 3 C: 60
+  -4 W 4 C: 60
 
 [horasMasActividad.py](scripts/horasMasActividad.py): 
+  -Master: 462
+  -2 W 2 C: 150
+  -2 W 4 C: 156
+  -2 W 8 C: 84
+  -4 W 2 C: 90
+  -4 W 3 C: 96
+  -4 W 4 C: 96
+  
+[pixelesMasMovidos.py](scripts/pixelesMasMovidos.py): 
+  -Master: 342
+  -2 W 2 C: 114
+  -2 W 4 C: 120
+  -2 W 8 C: 66
+  -4 W 2 C: 72
+  -4 W 3 C: 78
+  -4 W 4 C: 78
 
 [userMasActivo.py](scripts/userMasActivo.py): 
-
-[pixelesMasMovidos.py](scripts/pixelesMasMovidos.py): 
+  -Master: 600
+  -2 W 2 C: 144
+  -2 W 4 C: 150
+  -2 W 8 C: 84
+  -4 W 2 C: 90
+  -4 W 3 C: 90
+  -4 W 4 C: 90
 
 [colorMasUsadoHora.py](scripts/colorMasUsadoHora.py): 
+  -Master: 900
+  -2 W 2 C: 252
+  -2 W 4 C: 252
+  -2 W 8 C: 132
+  -4 W 2 C: 144
+  -4 W 3 C: 144
+  -4 W 4 C: 150
