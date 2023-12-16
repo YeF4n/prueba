@@ -74,7 +74,7 @@ header img {
 
   }
   #grafica1 img {
-    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    width: 110%; /* Ajusta el ancho de la imagen al 100% del contenedor */
     height: auto; /* Para mantener la proporción original de la imagen */
     display: block; /* Elimina el espacio extra debajo de la imagen */
     margin: 0 auto; /* Centra la imagen horizontalmente */
@@ -115,9 +115,90 @@ header img {
 }
 
 #grafica3 img {
-    width: 60%;
-    height: auto;
+    width: 70%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Para mantener la proporción original de la imagen */
+    display: block; /* Elimina el espacio extra debajo de la imagen */
     margin: 0 auto; /* Centra la imagen horizontalmente */
-    margin-right: 20px;
+}
+
+#explicacion3 {
+    font-size: 25px; 
+    margin-right: 20px; /* Ajusta el margen derecho según tus necesidades */
+    margin-top: 50px;
+}
+
+#grafica4{
+    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
+    height: auto; /* Para mantener la proporción original de la imagen */
+    display: block; /* Elimina el espacio extra debajo de la imagen */
+    margin: 0 auto; /* Centra la imagen horizontalmente */
+}
+
+pre {
+    border: 1px solid #ccc; /* Estilo de borde del bloque pre */
+    padding: 10px; /* Añade un espacio interno para el contenido del bloque pre */
+    border-radius: 5px; /* Ajusta el radio de las esquinas del borde */
+    overflow: auto; /* Añade barras de desplazamiento si el contenido es demasiado grande */
+}
+
+code {
+    display: block; /* Hace que el bloque de código sea de tipo bloque */
+    background-color: #f8f8f8; /* Color de fondo para el bloque de código */
+    border-radius: 3px; /* Ajusta el radio de las esquinas del bloque de código */
+    overflow: auto; /* Añade barras de desplazamiento si el contenido es demasiado grande */
+    white-space: pre-wrap; /* Mantiene el formato del texto y permite saltos de línea */
+    margin: 0; /* Elimina el margen por defecto */
+}
+
+footer {
+   
+    background-color: #f0f0f0; /* Color de fondo para el footer */
+    padding: 50px;
+    border-top: 1px solid #ccc; /* Línea superior */
+    display: flex;
+    flex-direction: column;
     align-items: center;
 }
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+li {
+    margin: 8px 0;
+    font-size: 20px; /* Ajusta el tamaño de la fuente de los nombres */
+    display: flex; /* Utiliza flexbox para centrar verticalmente el punto gordo */
+    text-align: left; /* Alinea el texto a la izquierda */
+}
+
+li::before {
+    content: '\2022'; /* Código del punto gordo */
+    font-size: 25px; /* Ajusta el tamaño del punto gordo */
+    margin-right: 8px; /* Añade espacio entre el punto gordo y el nombre */
+    color: black; /* Color del punto gordo */
+}
+
+#ctn-conclusion {
+    margin-bottom: 50px;
+    text-align: justify;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+#ctn-conclusion h2 {
+    color: #333; /* Color del título */
+    font-size: 32px;
+    text-align: center;
+}
+
+#ctn-conclusion p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+#ctn-conclusion p:last-child {
+    margin-bottom: 0;
+}
+

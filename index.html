@@ -61,7 +61,7 @@
          
             <div class="row">
               <div class="col-md-6 offset-md-1" id="grafica1">  
-                <h3 id="titulo1">Gráfica de la actividad durante el evento</h3>              
+                <h3 id="titulo1">Gráfica del numero de veces que se ha cambiado el color</h3>              
                 <img src="img/web/FrecuenciaColores.png">
               </div>
               <div class="col-md-4" id="explicacion1">               
@@ -83,49 +83,67 @@
           
             <div class="separador"></div>
 
-        <div class="row">
-            <h3>Los píxeles que más se han cambiado</h3>            
-            <p>Estos son los píxeles que más cambios han recibido. La esquina superior izquierda es la más cambiada con diferencia, y una de las razones es porque está presente desde que se inició el evento. Luego podemos observas que las personas les encanta cambiar el centre de los dibujos, porque se nota mucho más que si cambias otra parte. Están también la broma de cambiar la o por la u en el .com de las páginas, que ha sido muy popular.</p>
+        <div class="row">          
+            <p style="font-size: 18px;">Estos son los píxeles que más cambios han recibido. La esquina superior izquierda es la más cambiada con diferencia, y una de las razones es porque está presente desde que se inició el evento. Luego podemos observas que las personas les encanta cambiar el centre de los dibujos, porque se nota mucho más que si cambias otra parte. Están también la broma de cambiar la o por la u en el .com de las páginas, que ha sido muy popular.</p>
             <div class="col-md-12" id="grafica3">                
                 <img src="img/web/mostEditedPixel.png">
             </div>
-            <div class="col-md-12" id="explicacion3">
+
+            <p class="text-center" style="font-size: 18px ">Aquí mostramos la gráfica de las coordenadas (x-y) de los píxeles más modificados que acabáis de ver</p>
+            <div class="col-md-12" id="grafica3">                
+                <img src="img/web/Coordenadas que más han sido modificadas (1).png">
+            </div>
+            
+            <div class="col-md-12 text-center my-4">
+                <h3>Top de los 5 usuarios mas activos y su equivalente en horas</h3>
+                <p style="font-size: 20px;">Top 1: 795 píxeles = 66,25 horas</p>
+                <p style="font-size: 20px;">Top 2: 781 píxeles = 65,10 horas</p>
+                <p style="font-size: 20px;">Top 3: 777 píxeles = 64,75 horas</p>
+                <p style="font-size: 20px;">Top 4: 767 píxeles = 63,90 horas</p>
+                <p style="font-size: 20px;">Top 5: 767 píxeles = 63,90 horas</p>
+            </div>
+            <div class="col-md-12 text-center" id="explicacion3">
                 <p>Como mención honorífica, tenemos la bandera de Canada, que no lograron completar porque los usuarios estaban cambiando todo el rato la hoja de alce de su bandera.</p>
                 <iframe width="560" height="315" src="https://www.youtube.com/embed/TyVXmpHQOqk?si=18fsSQeev1p3YlRd&amp;playback_rate=1.5" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
             </div>
         </div>       
     </div>
 
+    <div class="separador"></div>
+
     <!--Para cada apartado del readme haremos un div con un nombre-->
     <div id="ctn-codigo">
-        <h2>Descripcion del código</h2>
+        <h2 class="text-center">Descripcion del código</h2>
         <p>Se han desarrollado los siguientes scripts en Python, para ver los contenidos o descargarlos, dirigirse a la carpeta <a href="https://github.com/YeF4n/rPlaceAnalysis/tree/main/scripts">scripts</a>.</p>
         <p>En todos los códigos hay una primera lectura de los argumentos con los que se va a trabajar (inserte csv). Debido a que el csv contiene un encabezado a la hora de leerlo se añade la opción para eliminarlo del conjunto de datos. En todos los códigos que generan gráficas (color.py, colorMasUsado.py y horasMasActividad.py) se ha utilizado un parámetro extra que sirve para seleccionar el bucket en el que se desea que se guarde los resultados. Esto ha sido necesario ya que Matplotlib que es la librería que usamos para generar las imágenes no podía guardarlas directamente en el bucket. Para lo anterior se usa la función upload_blob. Debido a que ciertas casillas del csv están vacías (en la columna del timestamp) se realiza un filtro para eliminar la fila entera.</p>
         
-        <h3><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/color.py">color.py</a></h3>
+        <h3 class="text-center"><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/color.py">color.py</a></h3>
         <p>Trabaja con la columna color que se muestra con su valor en hexadecimal, de la cual saca la suma de cada uno. Con estos datos el código procede a hacer una gráfica de barras en la cual se muestra en el eje Y el número de veces que se ha usado ese color. Para darle un caracter más visual a la gráfica se han presentado las barras del color correspondiente al modificado. Esto se guarda en un png en local (/tmp) el cual se transpasa al GCS (Google Cloud Storage) en la carpeta y bucket seleccionados.</p>
     
-        <h3><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/horasMasActividad.py">horasMasActividad.py</a></h3>
+        <h3 class="text-center"><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/horasMasActividad.py">horasMasActividad.py</a></h3>
         <p>Trabaja con el timestamp en el que se ha puesto el dato (tanto dia como hora). Estos datos los ordena por timestamp de modificación, sumando para cada día y cada hora cuantos píxeles han sido modificados. Para cada día genera una gráfica de barras en las que aparecen las 24 horas del día en el eje X y el número de píxeles modificados en el Y.</p>
     
-        <h3><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/userMasActivo.py">userMasActivo.py</a></h3>
+        <h3 class="text-center"><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/userMasActivo.py">userMasActivo.py</a></h3>
         <p>Trabaja con las columnas del id, contando cuantas veces aparece cada uno de ellos y ordenandolos de manera descendiente. De esta forma con la función limit podemos sacar los 10 usuarios con más actividad y sacar un fichero con el id del usuario y las veces que escribe. El resultado se guarda en el GCS directamente.</p>
 
-        <h3><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/pixelesMasMovidos.py">pixelesMasMovidos.py</a></h3>
+        <h3 class="text-center"><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/pixelesMasMovidos.py">pixelesMasMovidos.py</a></h3>
         <p>Utiliza la columna de coordenadas y al igual que userMasActivo, cuenta cuantas veces aparece cada coordenada, ordenandolas de manera decreciente y mostrandose mediante la función limit las 10 coordenadas que más se han modificado. El fichero que se guarda directamente en el GCS contiene la coordenada y las veces que se ha modificado.</p>
 
-        <h3><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/colorMasUsadoHora.py">colorMasUsadoHora.py</a></h3>
+        <h3 class="text-center"><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/colorMasUsadoHora.py">colorMasUsadoHora.py</a></h3>
         <p>Utiliza de nuevo la columna timestampt y por cada hora de cada día muestra en forma de gráfico de lineas los 10 colores que más se han utilizado . Hemos establecido el límite superior de la gráfica a 1500000 elementos para poder apreciar la diferencia entre los valores debido a que el valor #FFFFFF al final de la gráfica toma un valor exorbitado.</p>
     </div>
 
+    <div class="separador"></div>
     <div id="ctn-performance">
-        <h2>Evaluación del rendimiento</h2>
-        <p>Como mejor ha funcionado ha sido con 2 workers y 8 cores, algo que era esperable, ya que es la que utilizaba el mayor número de nodos.</p>
-        <img src="img/web/Gráficas_tiempos.png">
+        <h2 class="text-center">Evaluación del rendimiento</h2>
+        <p class="text-center" style="font-size: 18px;">Como mejor ha funcionado ha sido con 2 workers y 8 cores, algo que era esperable, ya que es la que utilizaba el mayor número de nodos.</p>
+        <img src="img/web/Gráficas_tiempos.png" id="grafica4" >
     </div>
 
-    <div id="ctn-infraestructura">
-        <h2>Infraestructura</h2>
+    <div class="separador"></div>
+
+    <div style="font-size: 20px;" id="ctn-infraestructura">
+        <h2 class="text-center">Infraestructura</h2>
         <p>Para el desarrollo del proyecto hemos utilizado las siguientes herramientas:</p>
         <ul>
             <li><i>Github</i>: Control de versiones, almacenamiento de datos y setup de la página web (github pages).</li>
@@ -138,8 +156,10 @@
         </ul>
     </div>
 
+    <div class="separador"></div>
+
     <div id="ctn-tutorial-spark">
-        <h2>Cómo ejecutar PySpark por Local</h2>
+        <h2 class="text-center">Cómo ejecutar PySpark por Local</h2>
         <p>Antes de nada necesitaremos una cuenta de Google Cloud con saldo, un proyecto de Cloud (el predeterminado sirve), un bucket que contenga una carpeta llamada input con el csv anteriormente mencionado y los .py descargados en el bucket, en el mismo directorio que la carpeta input.</p>
         
         <h3>Ejecuta PySpark por Local</h3>
@@ -235,9 +255,9 @@
         
     </div>
     
-    <div id="ctn-conclusion">
-        <h2>Conclusión</h2>
-        <p>Como era la primera vez desde 2017 que se hizo un r/Place, muchas personas desconocían este evento. Sin embargo, el número de participantes activos en el mural sólo fue en aumento. Ni los organizadores se esperaron tal acogida y es por ello mismo que tuvieron que aumentar dos veces el tamaño del mural.
+    <div style="margin-bottom: 50px;" id="ctn-conclusion">
+        <h2 style="color: #333; font-size: 32px; text-align: center;">Conclusión</h2>
+        <p style="font-size: 18px; line-height: 1.6; margin-bottom: 20px;">Como era la primera vez desde 2017 que se hizo un r/Place, muchas personas desconocían este evento. Sin embargo, el número de participantes activos en el mural sólo fue en aumento. Ni los organizadores se esperaron tal acogida y es por ello mismo que tuvieron que aumentar dos veces el tamaño del mural.
         Hay participantes de todo tipo, están los que entran solo a poner un píxel cualquiera de forma aleatoria cuando se acuerdan, están los que se vuelcan con una comunidad para hacer diseños, están los que no quieren que Canadá forme su bandera, están los que intentan competir contra los bots franceses...</p>
         <p>Nuestro intención desde el principio ha sido intentar abstraer del historial de píxeles colocados datos interesantes, que llamen la atención, tanto para los que participaron en el evento como para los que no sabían de su existencia.
         No podríamos haber logrado esto sin utilizar el procesamiento de Big Data por la increíble cantidad de información que teníamos a mano. Nos habría gustado compartir más gráficos con curiosidades, pero hicimos lo que pudimos con la limitación de que los datos sólo tuviesen 4 campos. </p>
@@ -246,15 +266,21 @@
 
 
     <footer>
-        <p>Proyecto realizado por:</p>
-        <ul>      
-            <li>Fan Ye</li>   
-            <li>Gonzalo Isla Llave</li>   
-            <li>Sergio Sánchez Chamizo</li>  
-            <li>Alejandro Vallejos Entrena</li>   
-            <li>Óscar Iván Gutiérrez Parrado</li>
-        </ul>        
+        <div style="display: flex; align-items: center;">
+            <img src="img/web/rplaceLogo.png" id="grafica5" style="margin-right: 50px;">
+            <div>
+                <p style="font-size: 35px;">Proyecto realizado por:</p>
+                <ul>      
+                    <li>Fan Ye</li>   
+                    <li>Gonzalo Isla Llave</li>   
+                    <li>Sergio Sánchez Chamizo</li>  
+                    <li>Alejandro Vallejos Entrena</li>   
+                    <li>Óscar Iván Gutiérrez Parrado</li>
+                </ul>
+            </div>
+        </div>
     </footer>
+    
     <script>
         // Resalta todos los bloques de código en la página
         hljs.highlightAll();
