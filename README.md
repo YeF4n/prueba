@@ -48,10 +48,12 @@ _Matplotlib_: Librería de Python para la creación de los gráficos que generan
 
 _Python_: Lenguaje de programación usado para generar los códigos.
 
+_HTML/Javascript_: Programación del frontend de la página web.
+
 _Pyspark_: Biblioteca de Python que se utiliza como interfaz para Apache Spark. Con PySpark, podemos realizar operaciones en datasets y aprovechar la programación funcional paralela.
 
-Los lenguajes que necesitaremos serán HTML y JavaScript para hacer la página web y Python para aplicar el marco de procesamiento de datos de Apache Spark para analizar los datos que tenemos.
-Utilizaremos Visual Code como herramienta principal para codificar, Google Cloud para almacenar los datos y GitHub para trabajar de forma colaborativa.
+_Visual Code_: Editor de código fuente para la depuración, control integrado de Git, resaltado de sintaxis, finalización inteligente de código, fragmentos y refactorización de código.
+
 # Como ejecutar el proyecto
 Antes de nada necesitaremos una cuenta de Google Cloud con saldo, un proyecto de Cloud (el predeterminado sirve), un bucket que contenga una carpeta llamada input con el csv anteriormente mencionado y los .py descargados en el bucket, en el mismo directorio que la carpeta input.
 
