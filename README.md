@@ -97,3 +97,7 @@ Los últimos dos códigos generan un txt que será procesado para mostrar una ta
 Ejecutar pixelesMasMovidos.py: ```spark-submit <numero workers> <numero ejecutores> $BUCKET/pixelesMasMovidos.py $BUCKET/input $BUCKET/<nombre archivo salida>```
 
 Ejecutar userMasActivo.py: ```spark-submit  <numero workers> <numero ejecutores> $BUCKET/userMasActivo.py $BUCKET/input $BUCKET/<nombre archivo salida>```
+
+# Comparaciones de tiempos
+![top10ColoresPorHora](https://github.com/YeF4n/rPlaceAnalysis/assets/100349938/f8eeaf87-dd60-4b73-9c3e-e6aeb265a96d)
+
