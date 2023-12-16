@@ -48,7 +48,7 @@ result_df = df.groupBy("day", "hour", "pixel_color").count() \
     .orderBy("day", "hour", desc("count"), "pixel_color")
 
 # Save the result to the specified output path
-result_df.write.mode("overwrite").csv(output_csv, header=True)
+#result_df.write.mode("overwrite").csv(output_csv, header=True)
 
 # Filter out rows where 'day', 'hour', or 'pixel_color' is null
 result_df = result_df.filter(
@@ -63,13 +63,14 @@ days_hours_colors = [(row.day, row.hour, row.pixel_color, row["count"]) for row 
 
 color_series = {}
 for day, hour, color, count in days_hours_colors:
-    if color not in color_series:
-        color_series[color] = {"x": [], "y": []}
+    if day!= 1 and hour!=12:
+        if color not in color_series:
+            color_series[color] = {"x": [], "y": []}
 
-    # Convert day and hour to a single numeric value
-    numeric_value = (day - 1) * 24 + hour
-    color_series[color]["x"].append(numeric_value)
-    color_series[color]["y"].append(count)  # Use count as y-value
+        # Convert day and hour to a single numeric value
+        numeric_value = (day - 1) * 24 + hour
+        color_series[color]["x"].append(numeric_value)
+        color_series[color]["y"].append(count)  # Use count as y-value
 
 # Plotting
 plt.figure(figsize=(10, 6))
@@ -77,8 +78,8 @@ plt.figure(figsize=(10, 6))
 for color, series in color_series.items():
     # Cambia el color blanco a negro y usa estrellas en lugar de puntos
     rgb_color = mcolors.hex2color(color)
-    if rgb_color == '#FFFFFF':
-        rgb_color = '#000000'
+    if color == '#FFFFFF':
+        rgb_color = mcolors.hex2color('#F8CFC8')
         marker = '*'
     else:
         marker = 'o'
@@ -89,7 +90,7 @@ plt.title('Top 10 Colors Over Time')
 plt.xlabel('Time (hours)')
 plt.ylabel('Count')
 plt.legend()
-plt.yscale("1500000")
+plt.yscale('log')
 plt.grid(True)
 
 # Save the plot locally
