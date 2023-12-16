@@ -3,9 +3,9 @@
 https://yef4n.github.io/rPlaceAnalysis/
 
 ## Descripción
-El proyecto trata sobre el análisis del mural llamado r/place creado en April Fools’ Day del 2017 en Reddit. 
+El proyecto trata sobre el análisis del mural de r/place 2022. El r/place es un evento que se creó en el April Fools’ Day del 2017 en Reddit.
 
-El lienzo inicialmente es de 1000 x 1000 píxeles, aunque a lo largo de los dos días que dura el evento, su tamaño aumenta hasta los 2000 x 2000 píxeles. Los usuarios pueden cambiar el color de un píxel cada 5 minutos. Aunque este proyecto se crea cada año desde 2021 se ha elegido el de 2017 ya que fue el primero que se creó.
+El lienzo inicialmente es de 1000 x 1000 píxeles, aunque a lo largo de la duración del evento, su tamaño aumenta hasta los 2000 x 2000 píxeles. Los usuarios pueden cambiar el color de un píxel cada 5 minutos. Aunque este proyecto se crea cada año desde 2021 se ha elegido el de 2017 ya que fue el primero que se creó.
 
 Comunidades de distintos ámbitos se organizan para crear imágenes a gran escala como por ejemplo banderas de sus países, monumentos, logos, comida o incluso personajes de series o películas.
 
@@ -36,7 +36,7 @@ Debido a que ciertas casillas del csv están vacías (en la columna del timestam
 
 [pixelesMasMovidos.py](scripts/pixelesMasMovidos.py): Utiliza la columna de coordenadas y al igual que userMasActivo, cuenta cuantas veces aparece cada coordenada, ordenandolas de manera decreciente y mostrandose mediante la función limit las 10 coordenadas que más se han modificado. El fichero que se guarda directamente en el GCS contiene la coordenada y las veces que se ha modificado.
 
-[colorMasUsadoHora.py](scripts/colorMasUsadoHora.py): Utiliza de nuevo la columna timestampt y por cada hora de cada día muestra en forma de gráfico de lineas los 10 colores que más se han utilizado (En el caso del blanco se ha utilizado el color negro pero en vez de puntos se han utilizado asteriscos para diferenciarlo). Hemos establecido el límite superior de la gráfica a 1500000 elementos para poder apreciar la diferencia entre los valores debido a que el valor #FFFFFF al final de la gráfica toma un valor exorbitado.
+[colorMasUsadoHora.py](scripts/colorMasUsadoHora.py): Utiliza de nuevo la columna timestampt y por cada hora de cada día muestra en forma de gráfico de lineas los 10 colores que más se han utilizado (En el caso del blanco se ha utilizado el color negro pero en vez de puntos se han utilizado asteriscos para diferenciarlo). Hemos establecido para que la gráfica resultante se muestre de manera logarítmica ya que los valores se disparan a partir de cierto punto, cambiando además el color Blanco (#FFFFFF) por otro que se aprecie mejor en la gráfica.
 
 ### Infraestructura
 Para el desarrollo del proyecto hemos utilizado las siguientes herramientas:
