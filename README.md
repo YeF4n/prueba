@@ -109,74 +109,81 @@ Ejecutar userMasActivo.py: ```spark-submit  <numero workers> <numero ejecutores>
 Los tiempos han sido los siguientes:
 
 [color.py](/scripts/color.py): 
-  -Master: 264
-  -2 W 2 C: 96
-  -2 W 4 C: 96
-  -2 W 8 C: 59
-  -4 W 2 C: 66
-  -4 W 3 C: 60
-  -4 W 4 C: 60
+
+          -Master: 264
+  
+          -2 W 2 C: 96
+  
+          -2 W 4 C: 96
+  
+          -2 W 8 C: 59
+  
+          -4 W 2 C: 66
+  
+          -4 W 3 C: 60
+  
+          -4 W 4 C: 60
 
 [horasMasActividad.py](scripts/horasMasActividad.py): 
 
-  -Master: 462
+          -Master: 462
   
-  -2 W 2 C: 150
+          -2 W 2 C: 150
   
-  -2 W 4 C: 156
+          -2 W 4 C: 156
   
-  -2 W 8 C: 84
-  
-  -4 W 2 C: 90
-  
-  -4 W 3 C: 96
-  
-  -4 W 4 C: 96
+          -2 W 8 C: 84
+          
+          -4 W 2 C: 90
+          
+          -4 W 3 C: 96
+          
+          -4 W 4 C: 96
   
 [pixelesMasMovidos.py](scripts/pixelesMasMovidos.py): 
 
-  -Master: 342
-  
-  -2 W 2 C: 114
-  
-  -2 W 4 C: 120
-  
-  -2 W 8 C: 66
-  
-  -4 W 2 C: 72
-  
-  -4 W 3 C: 78
-  
-  -4 W 4 C: 78
+          -Master: 342
+          
+          -2 W 2 C: 114
+          
+          -2 W 4 C: 120
+          
+          -2 W 8 C: 66
+          
+          -4 W 2 C: 72
+          
+          -4 W 3 C: 78
+          
+          -4 W 4 C: 78
 
 [userMasActivo.py](scripts/userMasActivo.py): 
 
-  -Master: 600
-  
-  -2 W 2 C: 144
-  
-  -2 W 4 C: 150
-  
-  -2 W 8 C: 84
-  
-  -4 W 2 C: 90
-  
-  -4 W 3 C: 90
-  
-  -4 W 4 C: 90
-  
+          -Master: 600
+          
+          -2 W 2 C: 144
+          
+          -2 W 4 C: 150
+          
+          -2 W 8 C: 84
+          
+          -4 W 2 C: 90
+          
+          -4 W 3 C: 90
+          
+          -4 W 4 C: 90
+          
 [colorMasUsadoHora.py](scripts/colorMasUsadoHora.py): 
 
-  -Master: 900
-  
-  -2 W 2 C: 252
-  
-  -2 W 4 C: 252
-  
-  -2 W 8 C: 132
-  
-  -4 W 2 C: 144
-  
-  -4 W 3 C: 144
-  
-  -4 W 4 C: 150
+          -Master: 900
+          
+          -2 W 2 C: 252
+          
+          -2 W 4 C: 252
+          
+          -2 W 8 C: 132
+          
+          -4 W 2 C: 144
+          
+          -4 W 3 C: 144
+          
+          -4 W 4 C: 150
