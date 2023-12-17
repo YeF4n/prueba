@@ -34,12 +34,13 @@ bucket=sys.argv[3]
 spark = SparkSession.builder.appName('ColorMasUsadoPorHora').getOrCreate()
 spark.conf.set("spark.sql.session.timeZone", "UTC")
 
-# Read the CSV file and convert timestamp
+# Lectura de los datos
 df = spark.read.option("header", "true").csv(input_csv) \
     .withColumn("timestamp", unix_timestamp(col("timestamp"), "yyyy-MM-dd HH:mm:ss.SSS z").cast(TimestampType())) \
     .withColumn("hour", hour(col("timestamp"))) \
     .withColumn("day", dayofmonth(col("timestamp")))
 
+# Separacion de la suma por dia y hora, se filtran los 10 colores mas usados y se ordenan cronologicamente
 windowSpec = Window().partitionBy("day", "hour").orderBy(desc("count"))
 result_df = df.groupBy("day", "hour", "pixel_color").count() \
     .withColumn("rank", dense_rank().over(windowSpec)) \
@@ -47,34 +48,31 @@ result_df = df.groupBy("day", "hour", "pixel_color").count() \
     .select("day", "hour", "pixel_color", "count") \
     .orderBy("day", "hour", desc("count"), "pixel_color")
 
-# Save the result to the specified output path
+# Guardado local
 #result_df.write.mode("overwrite").csv(output_csv, header=True)
 
-# Filter out rows where 'day', 'hour', or 'pixel_color' is null
+# Se filtran valores nulos
 result_df = result_df.filter(
     col("day").isNotNull() & col("hour").isNotNull() & col("pixel_color").isNotNull()
 )
 
-# Collect the data for plotting
+# Seleccionamos datos 
 top_colors = result_df.select("day", "hour", "pixel_color", "count").collect()
 
-# Prepare data for plotting
 days_hours_colors = [(row.day, row.hour, row.pixel_color, row["count"]) for row in top_colors]
-
 color_series = {}
 for day, hour, color, count in days_hours_colors:
     if day!= 1 and hour!=12:
         if color not in color_series:
             color_series[color] = {"x": [], "y": []}
 
-        # Convert day and hour to a single numeric value
+        # Conversion de dia y hora a numerico
         numeric_value = (day - 1) * 24 + hour
         color_series[color]["x"].append(numeric_value)
-        color_series[color]["y"].append(count)  # Use count as y-value
+        color_series[color]["y"].append(count) 
 
-# Plotting
 plt.figure(figsize=(10, 6))
-
+# Dibuja grafica, blanco de color #F8CFC8 y con marca *
 for color, series in color_series.items():
     # Cambia el color blanco a negro y usa estrellas en lugar de puntos
     rgb_color = mcolors.hex2color(color)
@@ -93,13 +91,12 @@ plt.legend()
 plt.yscale('log')
 plt.grid(True)
 
-# Save the plot locally
+# Guardado local
 local_output_path = '/tmp/day_{}_activity_count.png'.format(day)
 plt.savefig(local_output_path)
 output_path = 'output/day_{}_activity_count.png'.format(day)  # Adjust the GCS path
 
-# Upload the plot to Google Cloud Storage
+# Actualizado dell cloud
 upload_blob(bucket, local_output_path, output_path)
 
-# Show the plot
 plt.show()
