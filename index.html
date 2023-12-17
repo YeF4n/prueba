@@ -27,7 +27,7 @@
                     <iframe src="https://www.youtube.com/embed/K5O3UgLG2Jw?si=yag6ccIP57N4YnHh" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; clip: rect(0, auto, auto, 50%);"></iframe>
                 </div>            
             </div>
-            <!--Intro de la presentación, aquí ponemos lo del project proposal-->
+            
             <div class="col-md-6" id="ctn-descripcion">
                 <h2>Descripción</h2>
                 <p>El proyecto trata sobre el análisis del mural de r/place 2022. El r/place es un evento que se creó en el April Fools’ Day del 2017 en Reddit.</p>
@@ -35,6 +35,9 @@
                 <p>Comunidades de distintos ámbitos se organizan para crear imágenes a gran escala como por ejemplo banderas de sus países, monumentos, logos, comida o incluso personajes de series o películas.</p>
                 <p>En este proyecto se van a estudiar las zonas que más actividad han tenido a través de un mapa de calor, así como los colores más usados y a qué hora hay más actividad. Viendo los dibujos dónde más gente participa se podrá ver qué comunidades son más activos, las zonas más disputadas, cuántos píxeles ha puesto la persona con más actividad en el mural, o si hay zonas que hayan sobrevivido desde el inicio.</p>
                 
+                <h2>Descripción de la solución / trabajos que ya existen sobre el dataset</h2>
+                <p>Aunque nuestro proyecto no busca solucionar ningún problema real, si no que buscamos trabajar sobre un dataset con la ayuda de la tecnología Cloud, existen posts en internet en los que se ha trabajado sobre este mismo dataset. Lo que nosotros buscamos, no es solo ampliar esos "estudios", si no observar las diferencias en los tiempos de procesamiento de datos mediante un distinto número de Workers y Cores con Google Cloud.</p>
+
                 <h2>Necesidad de Big Data</h2>
                 <p>Con más de 100 millones de píxeles colocados sobre el mural y más de 10 millones de usuarios únicos, es imposible procesar esta información sin la ayuda de Big Data.</p>
                 
@@ -46,8 +49,7 @@
     </div>
 
     <div class="separador"></div>
-    <!--Parte más freestyle, vamos poniendo las gráficas y las explicamos un poco. 
-        No hay orden  concreto, lo ponemos como mejor nos parezca-->
+   
     <div id="ctn-analisis-datos">
         <h2>Algunos resultados interesantes</h2>
         <div class="row">
@@ -130,15 +132,55 @@
         <p>Utiliza la columna de coordenadas y al igual que userMasActivo, cuenta cuantas veces aparece cada coordenada, ordenandolas de manera decreciente y mostrandose mediante la función limit las 10 coordenadas que más se han modificado. El fichero que se guarda directamente en el GCS contiene la coordenada y las veces que se ha modificado.</p>
 
         <h3 class="text-center"><a href="https://github.com/YeF4n/rPlaceAnalysis/blob/main/scripts/colorMasUsadoHora.py">colorMasUsadoHora.py</a></h3>
-        <p>Utiliza de nuevo la columna timestampt y por cada hora de cada día muestra en forma de gráfico de lineas los 10 colores que más se han utilizado . Hemos establecido el límite superior de la gráfica a 1500000 elementos para poder apreciar la diferencia entre los valores debido a que el valor #FFFFFF al final de la gráfica toma un valor exorbitado.</p>
+        <p>Utiliza de nuevo la columna timestampt y por cada hora de cada día muestra en forma de gráfico de lineas los 10 colores que más se han utilizado (En el caso del blanco se ha utilizado el color negro pero en vez de puntos se han utilizado asteriscos para diferenciarlo). Hemos establecido para que la gráfica resultante se muestre de manera logarítmica ya que los valores se disparan a partir de cierto punto, cambiando además el color Blanco (#FFFFFF) por otro que se aprecie mejor en la gráfica. Como apunte, el primer dia tiene algunos valores muy pequeños que deforman la gráfica por lo que es un caso especial con datos no útiles y por ende no los mostramos.</p>
     </div>
+    <div class="separador"></div>
+
+    <h2 class="text-center">Estructura de nuestro Github</h2>
+    <br>
+    <h4 class="text-center"><a href="https://github.com/YeF4n/rPlaceAnalysis.git"> Link de nuestro github</a></h4>
+    <br>
+    <p>En el cual podemos encontrar: </p>
+    <p>-README.md: Con un link a la página web, una descripción del problema, los datos, los códigos utilizados, las herramientas y la infraestructura usada. Por otro lado se puede ver también una guía para saber como ejecutar el proyecto y una comparación de los tiempos de ejecución con todos los speed-ups y todos los tiempos de ejecución.</p>
+    <p>-Una carpeta llamada tablas: Esta contiene los txt generados por los scripts userMasActivo.py y pixelesMasMovidos.py.</p>
+    <p>-La carpeta Scripts: Que contiene, como su nombre da a entender, los scripts usados en el proyecto.</p>
+    <p>-La carpeta imágenes: La cual tiene dos subdirectorios, "web" que contiene las imágenes utilizadas en la página y "otros", el cual contiene las imágenes de las ejecuciones de cada uno de los scripts con las distintas configuraciones de workers y cores, mostradas en el servidor del historial de Spark.</p>
+
+
 
     <div class="separador"></div>
+
+
     <div id="ctn-performance">
         <h2 class="text-center">Evaluación del rendimiento</h2>
         <p class="text-center" style="font-size: 18px;">Como mejor ha funcionado ha sido con 2 workers y 8 cores, algo que era esperable, ya que es la que utilizaba el mayor número de nodos.</p>
         <img src="img/web/Gráficas_tiempos.png" id="grafica4" >
     </div>
+
+    <div class="row text-center" id="grafica5">
+        <div class="col-md-2 mx-auto">
+            <p>Color.py</p>
+            <img src="img/web/color.py.PNG" alt="Imagen 1">
+        </div>
+        <div class="col-md-2 mx-auto">
+            <p>horasMasActividad.py</p>
+            <img src="img/web/horasMasActividad.PNG" alt="Imagen 2">
+        </div>
+        <div class="col-md-2 mx-auto">
+            <p>pixelesMasMovidos.py</p>
+            <img src="img/web/pixelesMasMovidos.PNG" alt="Imagen 3">
+        </div>
+        <div class="col-md-2 mx-auto">
+            <p>userMasActivo.py</p>
+            <img src="img/web/usersMasActivo.PNG" alt="Imagen 4">
+        </div>
+        <div class="col-md-2 mx-auto">
+            <p>colorMasUsado.py</p>
+            <img src="img/web/colorMasUsado.PNG" alt="Imagen 5">
+        </div>
+    </div>
+    
+    
 
     <div class="separador"></div>
 
@@ -252,7 +294,8 @@
     </div>
 
     <div id="ctn-advanced-features">
-        <h2>Funciones a destacar</h2>
+        <h2 class="text-center">Funciones a destacar</h2>
+        <br>
         <p>La siguiente línea la usamos mucho ya que el timestamp ofrecido por el csv es bastante raro y completo por lo que tuvimos que refactorizarlo para usarlo.</p>
         <pre>
             <code class="languague-python">

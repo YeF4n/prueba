@@ -5,12 +5,12 @@ body {
     height: 50vh;
 }
 
-header {  
+header {
     text-align: center;
-    border-bottom: 1px solid #1b1c1d; /* Línea separadora fina */
-    padding-bottom: 10px; /* Espaciado opcional debajo de la línea */
-    background-image: url('img/web/headerFondo.png'); /* Ruta de la imagen de fondo */
-    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir todo el elemento */
+    border-bottom: 1px solid #1b1c1d;
+    padding-bottom: 10px;
+    background-image: url('img/web/headerFondo.png');
+    background-size: cover;
     height: 200px;
     display: flex;
     flex-direction: column;
@@ -20,21 +20,22 @@ header {
 
 header h1 {
     margin: 0;
-    color: white; /* Cambia el color del texto a blanco */
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5); /* Ajusta el sombreado con opacidad */
-    -webkit-text-stroke: 1px black; /* Grosor y color del delineado */
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Ajusta los valores según tu preferencia */
+    -webkit-text-stroke: 1px black; /* Opcional: Agregar contorno al texto */
 }
 
+
 header img {
-    width: 100px; /* Ajusta el tamaño del logo según tus necesidades */
-    vertical-align: middle; /* Centra verticalmente el logo */
+    width: 100px; 
+    vertical-align: middle; 
 }
 
 
 #ctn-descripcion {
-    max-height: 500px; /* Puedes ajustar la altura máxima según tus necesidades */
+    max-height: 500px; 
     overflow: auto;
-    max-width: 700px;
+    max-width: 800px;
     margin-left: 20px;
     margin-top: 60px;
     
@@ -53,7 +54,7 @@ header img {
 #graficaActividad img{
     width: 100%;
 }
-/*Estilo del scroll bar*/
+
 ::-webkit-scrollbar {
     width: 10px;
     background: #ffffff;
@@ -65,95 +66,95 @@ header img {
 }
 
 #titulo1 {
-    margin-left: 100px; /* Ajusta el margen izquierdo según tus necesidades */
+    margin-left: 100px; 
   }
 
 #grafica1 {
-    margin-left: 20px; /* Ajusta el margen izquierdo según tus necesidades */
+    margin-left: 20px; 
 
   }
   #grafica1 img {
-    width: 110%; /* Ajusta el ancho de la imagen al 100% del contenedor */
-    height: auto; /* Para mantener la proporción original de la imagen */
-    display: block; /* Elimina el espacio extra debajo de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
+    width: 110%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; /
     
   }
 #explicacion1 {
     font-size: 32px; 
-    margin-right: 20px; /* Ajusta el margen derecho según tus necesidades */
+    margin-right: 20px; 
     margin-top: 150px;
 }
 
 .separador {
-    border-top: 2px solid #ccc; /* Estilo de la línea separadora */
-    margin-top: 10px; /* Espaciado superior */
-    margin-bottom: 20px; /* Espaciado inferior */
+    border-top: 2px solid #ccc; 
+    margin-top: 10px; 
+    margin-bottom: 20px; 
   }
 
 
 #titulo2 {
-    margin-left: 100px; /* Ajusta el margen izquierdo según tus necesidades */
+    margin-left: 100px; 
   }
 
 #grafica2 {
-    margin-left: 20px; /* Ajusta el margen izquierdo según tus necesidades */
+    margin-left: 20px; 
 
   }
   #grafica2 img {
-    width: 110%; /* Ajusta el ancho de la imagen al 100% del contenedor */
-    height: auto; /* Para mantener la proporción original de la imagen */
-    display: block; /* Elimina el espacio extra debajo de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
+    width: 110%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
     margin-right: 20px;
   }
 #explicacion2 {
     font-size: 32px; 
-    margin-right: 20px; /* Ajusta el margen derecho según tus necesidades */
+    margin-right: 20px; 
     margin-top: 100px;
 }
 
 #grafica3 img {
-    width: 70%; /* Ajusta el ancho de la imagen al 100% del contenedor */
-    height: auto; /* Para mantener la proporción original de la imagen */
-    display: block; /* Elimina el espacio extra debajo de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
+    width: 70%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
 }
 
 #explicacion3 {
     font-size: 25px; 
-    margin-right: 20px; /* Ajusta el margen derecho según tus necesidades */
+    margin-right: 20px; 
     margin-top: 50px;
 }
 
 #grafica4{
-    width: 100%; /* Ajusta el ancho de la imagen al 100% del contenedor */
-    height: auto; /* Para mantener la proporción original de la imagen */
-    display: block; /* Elimina el espacio extra debajo de la imagen */
-    margin: 0 auto; /* Centra la imagen horizontalmente */
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    margin: 0 auto; 
 }
 
 pre {
-    border: 1px solid #ccc; /* Estilo de borde del bloque pre */
-    padding: 10px; /* Añade un espacio interno para el contenido del bloque pre */
-    border-radius: 5px; /* Ajusta el radio de las esquinas del borde */
-    overflow: auto; /* Añade barras de desplazamiento si el contenido es demasiado grande */
+    border: 1px solid #ccc; 
+    padding: 10px; 
+    border-radius: 5px; 
+    overflow: auto; 
 }
 
 code {
-    display: block; /* Hace que el bloque de código sea de tipo bloque */
-    background-color: #f8f8f8; /* Color de fondo para el bloque de código */
-    border-radius: 3px; /* Ajusta el radio de las esquinas del bloque de código */
-    overflow: auto; /* Añade barras de desplazamiento si el contenido es demasiado grande */
-    white-space: pre-wrap; /* Mantiene el formato del texto y permite saltos de línea */
-    margin: 0; /* Elimina el margen por defecto */
+    display: block; 
+    background-color: #f8f8f8; 
+    border-radius: 3px; 
+    overflow: auto; 
+    white-space: pre-wrap; 
+    margin: 0; 
 }
 
 footer {
    
-    background-color: #f0f0f0; /* Color de fondo para el footer */
+    background-color: #f0f0f0; 
     padding: 50px;
-    border-top: 1px solid #ccc; /* Línea superior */
+    border-top: 1px solid #ccc; 
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -166,16 +167,16 @@ ul {
 
 li {
     margin: 8px 0;
-    font-size: 20px; /* Ajusta el tamaño de la fuente de los nombres */
-    display: flex; /* Utiliza flexbox para centrar verticalmente el punto gordo */
-    text-align: left; /* Alinea el texto a la izquierda */
+    font-size: 20px; 
+    display: flex; 
+    text-align: left; 
 }
 
 li::before {
-    content: '\2022'; /* Código del punto gordo */
-    font-size: 25px; /* Ajusta el tamaño del punto gordo */
-    margin-right: 8px; /* Añade espacio entre el punto gordo y el nombre */
-    color: black; /* Color del punto gordo */
+    content: '\2022'; 
+    font-size: 25px; 
+    margin-right: 8px; 
+    color: black; 
 }
 
 #ctn-conclusion {
@@ -186,7 +187,7 @@ li::before {
 }
 
 #ctn-conclusion h2 {
-    color: #333; /* Color del título */
+    color: #333; 
     font-size: 32px;
     text-align: center;
 }
@@ -201,3 +202,23 @@ li::before {
     margin-bottom: 0;
 }
 
+#image-row {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    margin-top: 20px;
+}
+
+
+.image {
+    width: 150px; 
+    height: auto;
+    margin-right: 10px;
+}
+
+#grafica5 img {
+    width: 100%; 
+    height: auto; 
+    display: block; 
+    margin-bottom: 10px; 
+}
