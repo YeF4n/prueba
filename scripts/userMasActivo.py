@@ -10,14 +10,15 @@ input_csv = sys.argv[1]
 output_txt = sys.argv[2]
 
 spark = SparkSession.builder.appName('UsserMasActivo').getOrCreate()
-
+# Lectura datos, contador de veces que aparece el usuario y ordenado descendiente
 df = spark.read.option("header", "true").csv(input_csv) \
     .withColumn('id', col("user_id")).groupBy("id").count().orderBy(desc("count"))
 
-# Only select the top 10 users
+# Seleccionamos top 10 usuarios mas Actividad
 df_top10 = df.limit(10)
 
+# Formato del resultado (id, numero de veces que ha escrito)
 df_top10 = df_top10.withColumn('result', concat(col('id'), lit(','), col('count'))).drop('id', 'count')
 
-# Save the result
+# Guardado resultado
 df_top10.write.mode("overwrite").text(output_txt)
