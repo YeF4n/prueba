@@ -10,12 +10,13 @@ input_csv = sys.argv[1]
 output_txt = sys.argv[2]
 
 spark = SparkSession.builder.appName('PixelesMasMovidos').getOrCreate()
-
+#Seleccion de los datos
 df = spark.read.option("header", "true").csv(input_csv) \
     .withColumn('cord', col("coordinate")).groupBy("cord").count() \
     .orderBy(desc("count")).limit(10)
 
+#Conteo de veces que aparece el pixel (ejeX,ejeY)
 df = df.withColumn('result', concat(col('cord'), lit(','), col('count'))).drop('cord', 'count')
 
-# Save the result 
+# Guardado de los datos
 df.select("result").write.mode("overwrite").text(output_txt)
