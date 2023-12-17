@@ -32,6 +32,7 @@ if __name__ == "__main__":
     spark = SparkSession.builder.appName('horasMasActividad').getOrCreate()
     spark.conf.set("spark.sql.session.timeZone", "UTC")
 
+    # Lectura de los datos
     df = spark.read.option("header", "true").csv(csv_file) \
         .withColumn("timestamp", unix_timestamp(col("timestamp"), "yyyy-MM-dd HH:mm:ss.SSS z").cast(TimestampType())) \
         .withColumn("hour", hour(col("timestamp"))) \
@@ -39,9 +40,9 @@ if __name__ == "__main__":
         .groupBy("day", "hour").agg(first("timestamp").alias("timestamp"), count("*").alias("activity_count")) \
         .orderBy("day", "hour")
 
-
+ 
     data = df.collect()
-
+    # Conteo de pixeles y dibujado de una grafica por dia
     for day in set([row["day"] for row in data]):
         if day is not None:
             day_data = [row for row in data if row["day"] == day]
